@@ -1,0 +1,28 @@
+.green {
+  color: green;
+}
+.red {
+  color: tomato;
+}
+.blue {
+  color: blue;
+}
+.lentele {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.lentele p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.row {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+.col-6 {
+  width: 50%;
+}

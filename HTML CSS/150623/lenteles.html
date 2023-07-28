@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lenteles</title>
+    <!-- CSS - Cascading Stylesheets -->
+    <!-- CSS Stiliu integracija galima trimis budais -->
+    <!-- inline - stilius priskiriamas prie elemento -->
+    <!-- internal - stilius priskiriamas html dokumente -->
+    <!-- external - stilius priskiriamas css faile -->
+</head>
+<body style="color:rgb(223, 179, 179); display:flex; gap:25px;">
+    <!-- teksto lygiavimas zymimas savybe: text - align -->
+    <!-- left, right, center, justify(tarp dvieju pusiu) -->
+
+    <!-- color: nurodoma teksto spalva -->
+    <!-- background color : elemento fono spalva -->
+    <!-- width : norodomas elelento plotis -->
+    <!-- height : nurodomas aukstis -->
+    <!-- vertical - aign (top, bottom, middle) : nuorodos elemente esancio teksto vertikalus lygiavimas -->
+    <table>
+        <thead>
+            <tr>
+                <!-- th - table head -->
+                <!-- border-left: is kaires -->
+                <!-- border-right: is desines -->
+                <!-- border-top: is virsaus -->
+                <!-- border-bottom: is apacios -->
+                <th style="vertical-align: top; height: 80px; background: rgb(255, 220, 198); color:indigo; border-right: 1px solid black;">Prekes pavadinimas</th>
+                <th style="vertical-align: middle; background: rgb(255, 220, 198); color:indigo; border-right: 1px solid black;">Prekės aprašymas</th>
+                <th style="vertical-align: bottom; background: rgb(255, 220, 198); color:indigo; border-right: 1px solid black;">Prekės sandėlys</th>
+                <th style="background: rgb(255, 220, 198); color:indigo;">Prekės kiekis</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- tr - table row -->
+            <tr>
+                <!-- td - table data -->
+                <td rowspan="2" style="height: 80px; border-top: 1px solid black; border-right: 1px solid black;"> Lorem ipsum dolor sit amet.</td>
+                <td style="border-top: 1px solid black; border-right: 1px solid black;">Lorem, ipsum.</td>
+                <td style="border-top: 1px solid black; border-right: 1px solid black;">Lorem.</td>
+                <td style="border-top: 1px solid black;">Lorem ipsum dolor sit amet consectetur.</td>
+            </tr>
+            <tr>
+                <!-- td - table data -->
+                <td style="border-top: 1px solid black; border-right: 1px solid black;">Lorem ipsum dolor sit amet.</td>
+                <td colspan="2" style="border-top: 1px solid black;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, iure.</td>
+            </tr>
+            <!-- colspan nurodo kiek stulpeliu plocio turetu uzimti elementas -->
+            <!-- rowspan nurodo kiek eiluciu aukscio turetu uzimti elementas -->
+        </tbody>
+
+    </table>
+    
+</body>
+</html>

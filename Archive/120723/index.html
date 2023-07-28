@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <p id="zvaigzdutes"></p>
+    <h1 id="number"></h1>
+    <div id="antraUzduotis"></div>
+    <!-- ketvirta uzduotis -->
+    <div class="row">
+      <div id="sparta300" class="lentele col-6"></div>
+      <div id="santaBarbara" class="col-6"></div>
+    </div>
+    <!-- ketvirta uzduotis -->
+    <!-- penkta uzduotis -->
+    <div class="lentele" id="sushi"></div>
+    <!-- penkta uzduotis -->
+    <script>
+      let i = 0;
+      let rez = "";
+      while (i < 400) {
+        if (i % 50 === 0) rez += "\n";
+        rez = rez + "*";
+        i++;
+      }
+      document.getElementById("zvaigzdutes").innerText = rez;
+
+      function rand(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      }
+      let number = rand(1, 6);
+      document.getElementById("number").innerText = number;
+      let pirmas = rand(-10, 10);
+      let antras = rand(-10, 10);
+      let trecias = rand(-10, 10);
+      let rezAntraUzd = "";
+      if (pirmas < 0) {
+        rezAntraUzd += '<p class="green">' + pirmas + "</p>";
+      }
+      if (pirmas === 0) {
+        rezAntraUzd += '<p class="red">' + pirmas + "</p>";
+      }
+      if (pirmas > 0) {
+        rezAntraUzd += '<p class="blue">' + pirmas + "</p>";
+      }
+      if (antras < 0) {
+        rezAntraUzd += '<p class="green">' + antras + "</p>";
+      }
+      if (antras === 0) {
+        rezAntraUzd += '<p class="red">' + antras + "</p>";
+      }
+      if (antras > 0) {
+        rezAntraUzd += '<p class="blue">' + antras + "</p>";
+      }
+      if (trecias < 0) {
+        rezAntraUzd += '<p class="green">' + trecias + "</p>";
+      }
+      if (trecias === 0) {
+        rezAntraUzd += '<p class="red">' + trecias + "</p>";
+      }
+      if (trecias > 0) {
+        rezAntraUzd += '<p class="blue">' + trecias + "</p>";
+      }
+      document.getElementById("antraUzduotis").innerHTML = rezAntraUzd;
+      let pirmasFilmas = `okite css, kad visi rezultatai matytųsi ekrane`;
+      let balses = "AaĄaEeĘęĖėIiĮįYyOoUuŲųŪū";
+      i = 0;
+      while (i < pirmasFilmas.length) {
+        let z = 0;
+        while (z < balses.length) {
+          pirmasFilmas = pirmasFilmas.replaceAll(balses[z], "");
+          z++;
+        }
+        i++;
+      }
+      console.log(pirmasFilmas);
+      // ketvirta uzduotis
+      i = 0;
+      let moreThan150 = 0;
+      rez = "";
+      while (i <= 300) {
+        let num = rand(0, 300);
+        if (num > 150) moreThan150++;
+        if (num > 275) rez += `<p class="red">${num}</p>`;
+        else rez += `<p>${num}</p>`;
+        i++;
+      }
+      document.getElementById("sparta300").innerHTML = rez;
+      document.getElementById("santaBarbara").innerText = moreThan150;
+      // penkta uzduotis
+      let q = 1;
+      let rezult = "";
+      while (q <= 3000) {
+        if (q % 77 === 0) {
+          rezult += ` ${q},`;
+        }
+        q++;
+      }
+      rezult = rezult.slice(0, -1);
+      document.getElementById("sushi").innerText = rezult;
+    </script>
+  </body>
+</html>

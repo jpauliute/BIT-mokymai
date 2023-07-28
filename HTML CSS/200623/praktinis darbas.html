@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page structures praktinis</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+    img {
+        max-width: 100%
+    }
+    header {
+        background-color: rgb(186, 195, 202);
+        padding: 10px 0px 5px;
+    }
+    header nav ul {
+        display: flex;
+        justify-content: center;
+    }
+    header nav ul li a {
+        color: rgb(31, 32, 32);
+        text-decoration: none;
+        display: block;
+        padding: 5px 10px;
+        font-weight: 720;
+    }
+    header nav ul li a:hover {
+        background-color: rgb(227, 230, 235);
+        color: rgb(50, 54, 61);
+    }
+    header .container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+    header .logo {
+        width: 120px;
+    }
+
+    section {
+    background-color: rgb(208, 211, 211);
+    background-image:url(3.jpg);
+    background-repeat: repeat-x;
+    background-size: 100%;
+    background-position: 0 0;
+    background: rgb(208, 211, 211) repeat-x / cover;
+    margin: 0 auto;
+    justify-content: center;
+    }
+
+    section h1 {
+    color: rgb(31, 32, 32);
+    margin: 0;
+    padding-left: 200px;
+    width:100%;
+    height:50px;
+    padding-top: 50px;
+
+    }
+    .container {
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+    .imgSection {
+        width: 1300px;
+    }
+    footer {
+        background-color: rgb(186, 195, 202);
+        padding: 10px 0 5px;
+    }
+    footer nav ul {
+        display: flex;
+        justify-content: center;
+    }
+    footer nav ul li a {
+        color: rgb(31, 32, 32);
+        text-decoration: none;
+        display: block;
+        padding: 5px 10px;
+        font-weight: 720;
+    }
+    footer nav ul li a:hover {
+        background-color: rgb(227, 230, 235);
+        color: rgb(50, 54, 61);
+    }
+    footer .container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .mainRow {
+        display: flex; 
+        flex-direction: row; 
+        height: 100%; 
+        gap:5px
+        display:block;
+        width:70%;
+        gap: 20px;
+        padding-left: 200px;
+        text-align: justify;
+    }
+    .mainRowReverse {
+        display: flex; 
+        flex-direction: row-reverse; 
+        height: 100%; 
+        gap:5px
+        display:block;
+        width:70%;
+        gap: 20px;
+        padding-left: 200px;
+        text-align: justify;
+    }
+    
+</style>
+</head>
+<body>
+    <header>
+        <div class="container">
+        <div class="logo">
+            <img src="logo.png" alt="logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="">Apie mus</a></li>
+                <li><a href="">Paslaugos</a></li>
+                <li><a href="">Atsiliepimai</a></li>
+                <li><a href="">Karjera</a></li>
+                <li><a href="">Kontaktai</a></li>
+            </ul>
+        </nav>
+        </div>
+    </header>
+    <main>
+        <section>
+        <h1>Apie mus</h1>    
+            <div class="mainRow">
+            <div class="imgSection">
+                <img src="1pav.jpeg" alt="photo1">
+            </div>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus dolorem odio voluptatibus, consequuntur harum, veniam in, iusto minus accusantium tempore fuga nobis ad! Sequi corrupti ad provident asperiores quo incidunt similique. Unde eum autem blanditiis quibusdam, numquam corporis nisi eveniet reprehenderit illum earum! Magni esse corporis distinctio. Voluptatibus, deleniti maiores.</p>
+            </div>
+
+            <h1>Paslaugos</h1>
+            <div class="mainRowReverse">
+            <div class="imgSection">
+                <img src="2pav.jpg" alt="photo1">
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam cupiditate totam, saepe illo autem dolorem, consequatur vitae numquam eius earum sed magni ducimus expedita possimus perspiciatis quam animi eum, exercitationem odio. Tenetur iure maiores beatae at rem, quibusdam, distinctio magni eveniet sit adipisci tempora doloremque provident pariatur assumenda eius omnis.</p>
+            </div>
+
+            <h1>Atsiliepimai</h1>
+            <div class="mainRow">
+            <div class="imgSection">
+                <img src="3pav.jpg" alt="photo1">
+            </div>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae dolorum explicabo molestias sit error ipsum repellendus in quidem voluptates soluta omnis cum sed, veritatis nulla voluptatibus sint laboriosam debitis fuga. Amet perferendis praesentium hic alias mollitia dolorem, molestiae reiciendis doloremque atque ut autem eaque officia facere iure vel dolorum possimus.</p>
+            </div>
+
+            <h1>Karjera</h1>
+            <div class="mainRowReverse">
+            <div class="imgSection">
+                <img src="4pav.jpg" alt="photo1">
+            </div>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam voluptates voluptatum temporibus reprehenderit autem quo assumenda quas aliquid, accusantium consequatur ducimus. Non nulla quo atque voluptatum doloremque nesciunt reprehenderit illo, eaque magnam laboriosam, aut omnis ut vel magni voluptas qui asperiores iusto nisi. Velit, eos! Est aliquam molestias corrupti quae.</p>
+            </div>
+
+            <h1>Kontaktai</h1>
+            <div class="mainRow">
+            <div class="imgSection">
+                <img src="5pav.jpg" alt="photo1">
+            </div>
+            <p style="margin-block-end: 0px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dignissimos nulla voluptatum doloremque autem omnis? Natus repellendus, numquam molestias tempore voluptatibus totam vel veritatis pariatur similique, aliquam atque excepturi reiciendis aperiam illum maxime labore minus impedit quia. Obcaecati vero natus sed quia eos non minus dolore qui, eligendi unde est.</p>
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+        <nav>
+            <ul>
+                <li><a href="">Privatumo politika</a></li>
+                <li><a href="">Prekės ženklas</a></li>
+                <li><a href="">Spaudai</a></li>
+            </ul>
+        </nav>
+        </div>
+    </footer>
+</body>
+</html>

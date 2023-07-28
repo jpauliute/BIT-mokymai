@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ND Masyvai</title>
+  </head>
+  <body>
+    <script>
+      // Pirma uzduotis
+      // Sugeneruokite masyvą iš 30 elementų (indeksai nuo 0 iki 29),
+      // kurių reikšmės yra atsitiktiniai skaičiai nuo 5 iki 25.
+      function rand(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      }
+      const randomArray = [];
+      for (let i = 0; i < 30; i++) {
+        randomArray.push(rand(5, 25));
+      }
+      console.log(randomArray);
+      // Pirma uzduotis a) Suskaičiuokite kiek masyve yra
+      // reikšmių didesnių už 10;
+      console.log("-----Pirma uzduotis a------");
+
+      let count = 0;
+
+      for (const value of randomArray) {
+        if (value > 10) {
+          count += 1;
+        }
+      }
+      console.log("Reiksmiu didesniu uz 10 yra:", count);
+      // Pirma uzduotis b)Raskite didžiausią masyvo reikšmę
+      // ir jos indeksą arba indeksus jeigu yra keli;
+
+      console.log("-----Pirma uzduotis b------");
+      const maxIndex = [];
+      const maxFromArr = Math.max(...randomArray);
+      for (const index in randomArray) {
+        let element = randomArray[index];
+        if (element === maxFromArr) {
+          maxIndex.push(index);
+        }
+      }
+      console.log("Didziausio skaiciaus indeksas:", maxIndex);
+      // ??console.log("Didziausias skaicius:");??
+
+      // Pirma uzduotis c) Suskaičiuokite visų porinių
+      // (lyginių) indeksų reikšmių sumą;
+      console.log("-----Pirma uzduotis c------");
+      let sum = 0;
+      for (const index in randomArray) {
+        if (index % 2 === 0) {
+          sum += randomArray[index];
+        }
+      }
+      console.log("Lyginiu reiksmiu suma:", sum);
+      // Pirma uzduotis d) Sukurkite naują masyvą, kurio reikšmės
+      // yra 1 uždavinio masyvo reikšmes minus tos reikšmės indeksas;
+
+      console.log("-----Pirma uzduotis d------");
+      let arrSkirtumas = [];
+      for (const index in randomArray) {
+        element = randomArray[index];
+        arrSkirtumas.push(element - index);
+      }
+      console.log("Random Array reiksmes:", randomArray);
+      console.log("Skirtumas:", arrSkirtumas);
+      // Pirma uzduotis e) Papildykite masyvą papildomais 10 elementų
+      // su reikšmėmis nuo 5 iki 25, kad bendras masyvas padidėtų
+      // iki indekso 39;
+
+      console.log("-----Pirma uzduotis e------");
+      for (let i = 0; i < 10; i++) {
+        randomArray.push(rand(5, 25));
+      }
+      console.log(randomArray);
+      // Pirma uzduotis f) Iš masyvo elementų sukurkite du
+      // naujus masyvus. Vienas turi būti sudarytas iš neporinių
+      // indeksų reikšmių, o kitas iš porinių;
+
+      console.log("-----Pirma uzduotis f------");
+      const poriniaiArr = [];
+      const neporiniaiArr = [];
+      for (const value of randomArray) {
+        if (value % 2 === 0) {
+          poriniaiArr.push(value);
+        } else {
+          neporiniaiArr.push(value);
+        }
+      }
+      console.log(poriniaiArr);
+      console.log(neporiniaiArr);
+      // Pirma uzduotis g) Pirminio masyvo elementus su poriniais
+      // indeksais padarykite lygius 0 jeigu jie didesni už 15;
+      console.log("-----Pirma uzduotis g------");
+      for (let i = 0; i < randomArray.length; i++) {
+        if (i % 2 === 0 && randomArray[i] > 15) {
+          randomArray[i] = 0;
+        }
+      }
+      console.log(
+        "Masyvas, kurių indeksų reikšmės diesnės už 15, lygios 0: ",
+        randomArray
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loginiai operatoriai</title>
+  </head>
+  <body>
+    <script>
+      function rand(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      }
+      let x = rand(5, 10);
+      let y = rand(15, 20);
+      let z = rand(0, 1);
+      //   Atspausdinkite pasveikinimo teksta,
+      // jeigu x lygu 10 IR jeigu y lygu 15
+      if (x === 10 && y === 15) console.log("Hello world");
+
+      //   Atspausdinkite atsisveikinimo teksta,
+      // jeigu x yra lygu 10 ARBA jeigu y yra lygu 20
+      if (x === 10 || y === 20) console.log("Bye world");
+
+      if ((x >= 9 && y >= 19) || z === 1) console.log("Sujungta salyga");
+    </script>
+  </body>
+</html>

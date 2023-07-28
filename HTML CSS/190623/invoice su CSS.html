@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice su CSS</title>
+</head>
+<style>
+    body{
+        margin: 70px 180px;
+        font-family: "Sans-serif", Arial;
+        border-spacing: 0pt;
+    }
+    .pabrauktas {
+        border-bottom: 1px solid rgb(165, 159, 159);
+        color: rgba(0, 68, 156, 0.822);
+        font-weight: bold;
+        font-size: 13px;
+    }
+    .pirmasStulpelis td {
+        font-size: 18px;
+        height: 24px;
+    }
+    .antrasStulpelis td {
+        font-size: 14px;
+        height: 22px;
+    }
+    .antraLenteleHeading th {
+        color: white;
+        font-weight: bold;
+        background-color: rgb(72, 125, 240);
+        font-size: 13px;
+        height: 25px;
+        border: 1px solid grey;
+        border-collapse: collapse;
+        border-spacing: none;
+    }
+
+    .antraLenteleBody td {
+        border-bottom: 1px solid grey;
+        border-right: 1px solid grey;
+        border-collapse: collapse;
+        border-spacing: 0px;
+    }
+    
+</style>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2" style="color: rgb(165, 159, 159); text-align:left; font-size: 30px; width: 300px;">INVOICE</th>
+                <th></th>
+                <th colspan="2" style="padding-left: 90px; text-align:center;: 180px"><img style="width: 110px;" src="Capture.JPG" alt="logo"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="pirmasStulpelis">
+                <td style="width: 200px">Your Company Name</td>
+                <td style="width:30px"></td>
+                <td></td>
+                <td></td>
+                <td class="pabrauktas" style="font-size: 13px;text-align:center">2023-06-16</td>
+            </tr>
+            <tr class="pirmasStulpelis">
+                <td>123 Street Address</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="pirmasStulpelis">
+                <td>City, State, Zip/Post Code</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="pabrauktas" style="font-size: 13px; text-align:center">20230616</td>
+                </td>
+            </tr>
+            <tr  class="pirmasStulpelis">
+                <td>Phone Number</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="pirmasStulpelis">
+                <td>Email Address</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2"></td>
+                <td style= "height: 30px" colspan="3"></td>
+            </tr>
+            <tr>
+                <td class="pabrauktas">BILL TO</td>
+                <td></td>
+                <td colspan= "3" class="pabrauktas">SHIP TO</td>
+            </tr>
+            <tr style="height:15px">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="antrasStulpelis">
+                <td>Contact Name</td>
+                <td></td>
+                <td>Name / Dept</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="antrasStulpelis">
+                <td>Client Company Name</td>
+                <td></td>
+                <td>Client Company Name</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="antrasStulpelis">
+                <td>Address</td>
+                <td></td>
+                <td>Address</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="antrasStulpelis">
+                <td>Phone, Email</td>
+                <td></td>
+                <td>Phone, Email</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td  style="height:15px" colspan="2"></td>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+                <td  style="height:15px"colspan="2"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="antraLenteleHeading">
+                <th colspan="2">DESCRIPTION</th>
+                <th>QTY</th>
+                <th>UNIT PRICE</th>
+                <th style="width: 200px">TOTAL</th>
+            </tr>
+        </thead>
+        <tbody class="antraLenteleBody">
+            <tr class="antrasStulpelis">
+                <td colspan="2" style="border-left: 1px solid grey";>Monitorius</td>
+                <td>10</td>
+                <td>100.99</td>
+                <td>1,009.9</td>
+            </tr>
+            <tr class="antrasStulpelis" style="background-color: rgb(225, 225, 225)">
+                <td colspan="2" style="border-left: 1px solid grey"></td>
+                <td></td>
+                <td></td>
+                <td>0.00</td>
+            </tr>
+            <tr class="antrasStulpelis">
+                <td colspan="2" style="border-left: 1px solid grey"></td>
+                <td></td>
+                <td></td>
+                <td>0.00</td>
+            </tr>
+            <tr class="antrasStulpelis" style="background-color: rgb(225, 225, 225)">
+                <td colspan="2" style="border-left: 1px solid grey"></td>
+                <td></td>
+                <td></td>
+                <td>0.00</td>
+            </tr>
+            <tr class="antrasStulpelis">
+                <td colspan="2" style="border-left: 1px solid grey"></td>
+                <td></td>
+                <td></td>
+                <td>0.00</td>
+            </tr>
+            <tr class="antrasStulpelis" style="background-color: rgb(225, 225, 225)">
+                <td colspan="2" style="border-left: 1px solid grey"></td>
+                <td></td>
+                <td></td>
+                <td>0.00</td>
+            </tr>
+            <tr>
+                <td style="border:none"></td>
+                <td style="border:none"></td>
+                <td style="border:none; text-align: right; font-size: 10px;  font-weight: bold; color: rgba(0, 68, 156, 0.822)">SUBTOTAL</td>
+                <td colspan="2" style="border-left: 1px solid grey; text-align: right; border:none; border-bottom: 1px solid grey; font-size: 13px">1,009.9</td>
+            </tr>
+            <tr>
+                <td style="border:none"></td>
+                <td style="border:none"></td>
+                <td style="border:none; text-align: right; font-size: 10px; font-weight: bold; color: rgba(0, 68, 156, 0.822)">DISCOUNT</td>
+                <td colspan="2" style="border-left: 1px solid grey;  text-align: right; border:none; border-bottom: 1px solid grey; font-size: 13px;">0.00</td>
+            </tr>
+            <tr>
+                <td style="border:none"></td>
+                <td style="border:none"></td>
+                <td style="border:none; text-align: right; font-weight: bold; font-size: '17'px; color: rgba(0, 68, 156, 0.822)";>Balance <br> Due</td>
+                <td colspan="2" style="border-left: 1px solid grey;  text-align: right; font-size: 20px; font-weight: bold; background-color: rgb(172, 193, 240); border:none; border-bottom: 2px solid black;">€ 1,009.9</td>
+            </tr>
+    </table>
+</body>
+</html>

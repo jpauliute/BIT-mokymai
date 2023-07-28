@@ -1,0 +1,151 @@
+body {
+    font-family: 'Poppins';
+    margin:0;
+}
+.rowMain {
+    display:flex;
+    gap:200px;
+    margin: 0;
+}
+.container{
+    max-width: 1536px;
+    margin: 0 auto;
+
+}
+.center-center{
+    display: flex;
+    justify-content: center;
+    align-items: 
+    center;
+
+}
+.forma {
+    margin-top:100px;
+    margin-left:100px;
+}
+h1 {
+    font-weight: 500;
+    size: 12px;
+    color: #000000;
+    margin:0;
+    padding: 0px 0px 64px 10px;
+}
+h5 {
+    font-weight: 500;
+    font-size: 14px;
+    color: #000000;
+    margin:0;
+}
+.greyBotton input {
+    width: 404px;
+    height: 32px;
+    border-radius: 10px;
+    border: 1px;
+    border-style:double;
+    border-color: #D9D9D9;
+    margin:0;
+    padding: 0 0 0 10px;
+
+}
+::placeholder {
+    font-family: 'poppins';
+    font-weight: 500;
+    font-size: 10px;
+    padding-left: 10px;
+    color: #D9D9D9;
+}
+.inputSection {
+    padding: 10px 0px 10px 10px;
+}
+.agree {
+    display:flex;
+    padding-top:15px;
+    padding-bottom:20px;
+}
+.agree p{
+    font-weight: 500;
+    font-size: 9px;
+    color:#000000;
+}
+.agree p a {
+    color:#000000;
+}
+.signUp {
+    background-color: #3A5B22;
+    width: 404px;
+    height: 32px;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size:13px;
+    line-height: 19.5px;
+    border-radius: 10px;
+    justify-items: center;
+    align-items:center;
+    box-shadow: 0px 2px 0px #D9D9D9;
+}
+.signUp a {
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    margin:0;
+    padding-top: 6px;
+    padding-left: 185px;
+    text-decoration: none;
+    color: #FFFFFF;
+    width: 47px;
+    height: 20px;
+}
+.or {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    display:flex;
+    width: 400px;
+    align-items:center;
+    gap:5px;
+}
+.or p {
+    font-size: 9px;
+    font-weight:500;
+    color: #000000;
+}
+.or h2 {
+    width: 100%; 
+    text-align:center; 
+    border-top: 2px solid #F5F5F5; 
+}
+.button {
+    display:flex;
+    width:190px;
+    height:32px;
+    border: 1px solid #D9D9D9;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 12px;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+}
+.button img {
+    width: 24px;
+    height: 24px;
+}
+.row {
+display:flex;
+gap: 25px;
+}
+.haveAcc {
+    display:flex;
+    gap: 8px;
+    padding-top: 30px;
+    width: 400px;
+    justify-content: center;
+}
+.haveAcc a{
+    color: #0F3DDE;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+}
+.col-6 {
+    width: 50%;
+}

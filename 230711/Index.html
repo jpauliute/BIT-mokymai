@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript string methods</title>
+  </head>
+  <body>
+    <script>
+      // \ Atvirkscias pasvirasis bruksnys nurodo "escape" simboli javascript sintakseje
+      // let x = "<div class=\"test"\></div>";
+
+      // Template literals (backtick)
+      let vardas = "Johnny";
+      let pavarde = "Depp";
+      let sieMetai = 2023;
+      let gimimoMetai = 1970;
+
+      console.log(
+        "As esu" +
+          vardas +
+          " " +
+          pavarde +
+          ". Man yra " +
+          (sieMetai - gimimoMetai) +
+          " metu(ai)."
+      );
+      console.log(
+        `As esu ${vardas} ${pavarde}. Man yra ${
+          sieMetai - gimimoMetai
+        } metu(ai)`
+      );
+
+      //   Math biblioteka
+
+      // Maziausio skaiciaus paieska
+      console.log(Math.min(52, 12, 8, 44, 13, 22));
+      let min = Math.min(52, 12, 8, 44, 13, 22);
+      console.log(`Maziausias skaicius yra: ${min}`);
+
+      // Didziausio skaiciaus paieska
+      let max = Math.max(52, 12, 8, 44, 13, 22);
+      console.log(`Didziausias skaiciuas yra ${max}`);
+
+      // Atsitiktinio skaiciaus paieska
+      let x = Math.random();
+      console.log(`Atsitiktinis skaicius yra ${x}`);
+
+      // Skaiciaus suapvalinimas:
+      //   Math.round() - Standartinis skaiciaus apvalinimas iki sveiko skaiciaus
+      console.log(
+        `Suapvalintas skaicius Math.round() metodu: ${Math.round(x)}`
+      );
+
+      //   Math.ceil() - Suapvalinimas iki artimiausio didesnio sveikojo skaiciaus esant skaiciui po kablelio;
+      console.log(`Suapvalintas skaičius Math.ceil() metodu: ${Math.ceil(x)}`);
+
+      //Math.floor() - Suapvalinimas iki artimiausio mažesnio sveikojo skaičiaus esant skaičiui po kablelio
+      console.log(
+        `Suapvalintas skaičius Math.floor() metodu: ${Math.floor(x)}`
+      );
+
+      let string = `Suapvalintas skaičius iki dviejų skaičių po kablelio ${x.toFixed(
+        2
+      )}`;
+
+      console.log(string);
+
+      //   slice metodas skirtas isimti dali teksto is stringo (Suapvalintas)
+      console.log(string.slice(0, 14));
+
+      console.log(string.slice(34, 44));
+
+      //   norint gauti - lio 0.65
+      console.log(string.slice(-8));
+
+      //   let naujasStringas = string[0] + string[1] + string[2];
+      // replace metodas skirtas pakeisti norima stringo dali nurodytaja
+      console.log(string.replace("skaicius", "zodis"));
+
+      //   replaceAll metodas atlieka ta pati tik su visais rastais simboliais
+      string = string.replaceAll(" ", "-");
+      console.log(string);
+
+      //   Skaiciaus konvertavimas i stringa
+      y = x.toString();
+
+      console.log(typeof y);
+
+      y = y.replace(".", ".");
+
+      console.log(y);
+
+      y = y.replace(",", ".");
+
+      console.log(y);
+
+      //   Stringo konvertavimas i skaiciu
+      // parseInt() - konvertavimas stringo kuriame yra sveikas skaicius 5 number duomens tipai
+      // parseFloat() - konvertavimas stringo kuriame skaicius po kablelio
+      console.log(parseFloat(y));
+
+      //   ESM konvertavimo variantas:
+      console.log(+y);
+
+      //   Stringo konvertavimas i didziasias raides:
+      console.log(string.toLocaleUpperCase());
+
+      console.log(string.toLowerCase());
+
+      console.log(string[0].toUpperCase() + string.substring(1));
+
+      console.log(
+        string.indexOf("skaičius"),
+        string.indexOf("skaičius") + "skaičius".length - 1
+      );
+
+      //   NaN (Not a Number) - Tikrinimas
+      let nan = NaN;
+      console.log(nan);
+      if (isNaN(nan)) {
+        console.log("Tai nera skaicius");
+      }
+
+      //   Paskutines pozicijos paieska
+      console.log(string.lastIndexOf("-"));
+      console.log("lorem".length);
+
+      //   Norint patikrinti ar stringe yra tekstas
+      if (string.includes("skaicius")) {
+        console.log("Žodis skaičius yra nurodytame stringe");
+      } else {
+        console.log("Žodis buvo nerastas");
+      }
+    </script>
+    <script src="namuDarbasIndex.js" type="text/javascript"></script>
+  </body>
+</html>

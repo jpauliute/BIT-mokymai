@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Funkcijos</title>
+  </head>
+  <body>
+    <script>
+      function rand(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      }
+      function tails(mode = 1) {
+        let result = "";
+        let counter = 0;
+        let stopper = mode === 1 ? 1 : 3;
+
+        //   let stopper;
+        //   if(mode===1){
+        //       stopper = 1;{
+        //       } else {
+        //           stopper = 3;
+        //       }
+
+        while (true) {
+          let skaicius = rand(0, 1);
+          if (skaicius === 0) {
+            result += "H";
+            counter++;
+          } else {
+            result += "S";
+            if (mode === 3) counter = 0;
+          }
+          if (counter === stopper) break;
+        }
+        return result;
+      }
+      document.write(tails(1));
+      document.write(`<p>${tails(2)}<\p>`);
+      document.write(`<p>${tails(3)}<\p>`);
+
+      // saskes
+      function game(first, second, pointsLimit) {
+        let playerOne = 0;
+        let playerTwo = 0;
+        result = "";
+
+        while (true) {
+          let pop = rand(10, 20);
+          let ptp = rand(5, 25);
+          playerOne += pop;
+          playerTwo += ptp;
+
+          if (pop > ptp) {
+            result += `Partija laimejo ${first} <br/>`;
+          } else if (pop === ptp) {
+            result += `Ivyko lygiosios: ${second} <br/>`;
+          } else {
+            result += `Partija laimejo: ${second} <br/>`;
+          }
+          if (playerOne >= pointsLimit || playerTwo >= pointsLimit) {
+            if (playerOne > playerTwo) {
+              result += `Zaidima laimejo ${second}`;
+            } else if (playerOne === playerTwo) {
+              result += `Zaidimas baigesi lygiosiomis`;
+            } else {
+              result += `Zaidima laimejo ${first}`;
+            }
+            break;
+          }
+        }
+        return result;
+      }
+      document.write(game("Jonas", "Martynas", 222));
+      document.write(`<p>${game("Gabriele", "Darius", 5)}</p>`);
+    </script>
+  </body>
+</html>

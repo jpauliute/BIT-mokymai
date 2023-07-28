@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ND 13-14</title>
+  </head>
+  <body>
+    <script>
+      function rand(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      }
+      // Naršyklėje nupieškite linija iš 400 “*”.
+      // Naudodami css stilių “suskaldykite” liniją taip,
+      // kad visos žvaigždutės matytųsi ekrane;
+      // Programiškai “suskaldykite” žvaigždutes taip, kad vienoje
+      // eilutėje nebūtų daugiau nei 50 “*”;
+
+      let rezultatas = "";
+      for (let i = 0; i < 400; i++) {
+        if (i % 50 === 0) {
+          rezultatas += "<br>";
+        }
+        rezultatas += "*";
+      }
+      document.write(rezultatas);
+
+      //   Naudokite funkcija rand(). Sugeneruokite atsitiktinį skaičių
+      //   nuo 1 iki 6 ir jį atspausdinkite atitinkame h tage.
+      //   Pvz skaičius 3- rezultatas: <h3>3</h3>
+
+      function rand(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      }
+
+      let skaicius = rand(1, 6);
+      for (i = 0; i < 1; i++) {
+        document.write(`<h${skaicius}>Labas Pasauli</h${skaicius}>`);
+      }
+
+      //   Naudokite funkcija rand(). Atspausdinkite 3 skaičius
+      //   nuo -10 iki 10. Skaičiai mažesni už 0 turi būti žali,
+      //   0 - raudonas, didesni už 0 mėlyni.
+
+      rezultatas = "";
+
+      for (let i = 0; i < 3; i++) {
+        skaicius = rand(-10, 10);
+        if (skaicius < 0) {
+          rezultatas += '<p style="color:green">' + skaicius + "</p>";
+        } else if (skaicius === 0) {
+          rezultatas += '<p style="color:red">' + skaicius + "</p>";
+        } else {
+          rezultatas += '<p style="color:blue">' + skaicius + "</p>";
+        }
+      }
+      document.write(rezultatas);
+
+      //   Sukurkite kintamąjį su stringu: “An American in Paris”.
+      //   Jame ištrinti visas balses. Rezultatą atspausdinti.
+      //   Kodą pakartoti su stringais: “Breakfast at Tiffany's”,
+      //   “2001: A Space Odyssey” ir “It's a Wonderful Life”.
+
+      let movie = "An American in Paris";
+      let letters = "aeiyou";
+      let rez = "";
+      let movieLowered = movie.toLocaleLowerCase();
+
+      document.write(movieLowered);
+
+      for (i = 0; i < movieLowered.length; i++) {
+        if (!letters.includes(movieLowered[i])) {
+          rez += movieLowered[i];
+        }
+      }
+      document.write(`<h4> ${rez} </h4>`);
+
+      // Sugeneruokite 300 atsitiktinių skaičių nuo 0 iki 300,
+      // atspausdinkite juos atskirtus tarpais ir suskaičiuokite
+      // kiek tarp jų yra didesnių už 150.  Skaičiai didesni nei 275
+      // turi būti raudonos spalvos.
+      let sum150 = 0;
+      rez = " ";
+      let sum = 0;
+      for (let i = 0; i < 300; i++) {
+        let skaicius = rand(0, 300);
+
+        if (skaicius > 150) {
+          sum150++;
+        }
+        if (skaicius > 275) {
+          rez += `<span style="color: red"> ${skaicius} </span>`;
+        }
+        rez += skaicius + " ";
+      }
+
+      document.write(rez);
+      document.write("<h3>Skaičių didesnių nei 150 yra:</h3>" + sum150);
+
+      // Vienoje eilutėje atspausdinkite visus skaičius nuo 1 iki 3000,
+      // kurie dalijasi iš 77 be liekanos. Skaičius atskirkite kableliais.
+      // Po paskutinio skaičiaus kablelio neturi būti. Jeigu reikia,
+      // panaudokite css, kad visi rezultatai matytųsi ekrane.
+      rez = "";
+      for (let i = 1; i <= 3000; i++) {
+        if (i % 77 === 0) {
+          rez += i + ", ";
+        }
+      }
+      rez = rez.slice(0, -2);
+      document.write(`<h5>Skaiciai kurie dalijasi is 77:  ${rez} </h5>`);
+
+      // Nupieškite kvadratą iš “*”, kurio kraštines sudaro 100 “*”.
+      // Panaudokite css stilių, kad kvadratas ekrane atrodytų kvadratinis.
+      let size = 25;
+      let result = "";
+      for (let y = 0; y < size; y++) {
+        for (x = 0; x < size; x++) {
+          if (y === x || x === size - y - 1) {
+            result += '<span style="color: red;">*</span>';
+          } else {
+            result += "*";
+          }
+        }
+        result += "<br />";
+      }
+      document.write(result);
+
+      // Metam monetą. Monetos kritimo rezultatą imituojam rand()
+      // funkcija, kur 0 yra herbas, o 1 - skaičius. Monetos metimo
+      // rezultatus išvedame į ekraną atskiroje eilutėje: “S” jeigu
+      // iškrito skaičius ir “H” jeigu herbas. Suprogramuokite tris
+      // skirtingus scenarijus kai monetos metimą stabdome:
+
+      // Iškritus herbui;
+      // Tris kartus iškritus herbui;
+      // Tris kartus iš eilės iškritus herbui;
+      rez = "";
+      while ((i = 0)) {
+        i = rand(0, 1);
+        if (i === 0) {
+          rez += "H";
+        } else {
+          rez += "S";
+        }
+        i++;
+      }
+      document.write(rez);
+    </script>
+  </body>
+</html>
