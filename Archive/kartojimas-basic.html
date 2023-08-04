@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kartojimas basic</title>
+  </head>
+  <body></body>
+  <script>
+    // 1. Sukurti du kintamuosius. Jiems priskirti savo mylimo aktoriaus
+    // vardą ir pavardę kaip stringus (Jonas Jonaitis).
+    // Atspausdinti trumpesnį stringą.
+    document.write(`<h3>Kintamieji ir salygos</h3>`);
+
+    let x = "Jonasdddd";
+    let y = "Petrais";
+    let rez = "";
+    if (x.leght < y.length) {
+      rez += x;
+    } else if (x.length === y.length) {
+      rez += "Zodziai vienodo ilgio";
+    } else rez += y;
+    document.write(rez);
+
+    // 2.Sukurkite 4 kintamuosius, kurie saugotų jūsų vardą, pavardę, gimimo metus ir šiuos metus (nebūtinai tikrus). Parašykite kodą, kuris pagal gimimo metus paskaičiuotų jūsų amžių ir naudodamas vardo ir pavardės kintamuosius atspausdintų tokį sakinį :
+    // "Aš esu Vardenis Pavardenis. Man yra XX metai(ų)".
+
+    let vardas = "vardas";
+    let pavarde = "pavarde";
+    let gimimoM = 1993;
+    let dabar = 2023;
+    let rezult = dabar - gimimoM;
+    document.write(
+      `<p>As esu ${vardas} ${pavarde}. Man yra ${rezult} metu.</p>`
+    );
+
+    // 3. Sukurti du kintamuosius. Jiems priskirti savo mylimo aktoriaus vardą
+    // ir pavardę kaip stringus. Sukurti trečią kintamąjį ir jam priskirti
+    // stringą, sudarytą iš trijų paskutinių vardo ir pavardės kintamųjų raidžių.
+    // Jį atspausdinti.
+
+    let name = "john";
+    let surname = "depp";
+    let rezu =
+      name[name.length - 3] +
+      name[name.length - 2] +
+      name[name.length - 1] +
+      surname[surname.length - 3] +
+      surname[surname.length - 2] +
+      surname[surname.length - 1];
+    document.write(`<p>${rezu}</p>`);
+
+    // 4. Sukurti kintamąjį su stringu: “Once upon a time in hollywood”.
+    // Jame visas “o” (didžiąsias ir mažąsias) pakeisti žvaigždutėm “*”.
+    // Rezultatą atspausdinti.
+
+    let movie = "Once upon a time in hollywood";
+    movie = movie.toLowerCase();
+    movie = movie.replaceAll("o", "*");
+    document.write(movie);
+
+    // 4. Sukurkite keturis kintamuosius kuriems sugeneruokite atsitiktines
+    // reikšmes nuo 0 iki 2. Suskaičiuokite kiek yra nulių, vienetų ir dvejetų.
+
+    function rand(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    let first = rand(0, 2);
+    let second = rand(0, 2);
+    let third = rand(0, 2);
+    let fourth = rand(0, 2);
+    let sumZero = 0;
+    let sumOne = 0;
+    let sumTwo = 0;
+
+    document.write(
+      `<p>Atsitiktiniai skaiciai yra: ${first}, ${second}, ${third}, ${fourth}</p>`
+    );
+
+    if (first === 0) sumZero++;
+    if (second === 0) sumZero++;
+    if (third === 0) sumZero++;
+    if (fourth === 0) sumZero++;
+    if (first === 1) sumOne++;
+    if (second === 1) sumOne++;
+    if (third === 1) sumOne++;
+    if (fourth === 1) sumOne++;
+    if (first === 2) sumTwo++;
+    if (second === 2) sumTwo++;
+    if (third === 2) sumTwo++;
+    if (fourth === 2) sumTwo++;
+
+    document.write(
+      `Nuliu yra: ${sumZero}, vienetu yra: ${sumOne}, dvejetu yra: ${sumTwo}`
+    );
+
+    // 5. Pasinaudokite atsitiktinio skaičiaus generavimo funkcija.
+    // Sukurkite du kintamuosius ir naudodamiesi funkcija jiems priskirkite
+    // atsitiktines reikšmes nuo 0 iki 4. Didesnę reikšmę padalinkite iš
+    // mažesnės. Atspausdinkite rezultatą jį suapvalinę iki 2 skaičių po kablelio.
+
+    let w = rand(0, 4);
+    let q = rand(0, 4);
+    let dalyba = 0;
+    if (w > q) dalyba += w / q;
+    else dalyba += q / w;
+    document.write(
+      `<p>Atsitiktiniai skaiciai yra: ${w} ir ${q}, dalybos rezultatas lygus ${dalyba}</p>`
+    );
+
+    // 6. Naudokite funkciją ir sukurkite tris kintamuosius kuriems
+    // priskirkite atsitiktines reikšmes nuo 0 iki 25. Raskite ir atspausdinkite
+    // vidurinę reikšmę.
+
+    let p = rand(0, 25);
+    let o = rand(0, 25);
+    let k = rand(0, 25);
+    let max = Math.max(p, o, k);
+    let min = Math.min(p, o, k);
+    let vidurine = 0;
+    if (p !== max && p !== min) vidurine += p;
+    else if (o !== max && o !== min) vidurine += o;
+    else if (k !== max && k !== min) vidurine += k;
+
+    document.write(
+      `<p>Reiksmes yra: ${p}, ${o}, ${k}. Didziausia reiksme lygi ${max}, maziausia lygi ${min}, vidutine reiksme lygi ${vidurine}</p>`
+    );
+
+    // 7. Sukurti du kintamuosius. Jiems priskirti savo mylimo aktoriaus
+    // vardą ir pavardę kaip stringus. Sukurti trečią kintamąjį ir jam priskirti
+    // stringą, sudarytą iš pirmų vardo ir pavardės kintamųjų raidžių.
+    // Jį atspausdinti.
+    let u = "John";
+    let t = "Smith";
+    let init = u[0] + t[0];
+    document.write(init);
+
+    // 8. Parašyti kodą, kuris generuotų atsitiktinį stringą iš lotyniškų
+    // mažųjų raidžių. Stringo ilgis 3 simboliai.
+
+    let lotyn = "ABCDEFGHIKLMNOPQRSTVXYZ";
+    let randLot = lotyn[rand(0, 22)] + lotyn[rand(0, 22)] + lotyn[rand(0, 22)];
+
+    document.write(`<p>${randLot}</p>`);
+
+    document.write(`<h3>2023-07-13</h3>`);
+    //    1. Nupieškite kvadratą iš “*”, kurio kraštines sudaro 100 “*”.
+    // Panaudokite css stilių, kad kvadratas ekrane atrodytų kvadratinis.
+    // * * * * * * * * * * *
+    // * * * * * * * * * * *
+    // * * * * * * * * * * *
+    // * * * * * * * * * * *
+    // * * * * * * * * * * *
+    // * * * * * * * * * * *
+    // * * * * * * * * * * *
+    // Prieš tai nupieštam kvadratui nupieškite raudonas istrižaines.
+
+    // 2. Metam monetą. Monetos kritimo rezultatą imituojam rand() funkcija,
+    // kur 0 yra herbas, o 1 - skaičius. Monetos metimo rezultatus išvedame
+    // į ekraną atskiroje eilutėje: “S” jeigu iškrito skaičius ir “H”
+    // jeigu herbas. Suprogramuokite tris skirtingus scenarijus kai
+    // monetos metimą stabdome:
+    // Iškritus herbui;
+    // Tris kartus iškritus herbui;
+    // Tris kartus iš eilės iškritus herbui;
+
+    document.write(`<h3>2023-07-14</h3>`);
+    // 1. Naršyklėje nupieškite linija iš 400 “*”.
+    // Naudodami css stilių “suskaldykite” liniją taip,
+    // kad visos žvaigždutės matytųsi ekrane;
+    // Programiškai “suskaldykite” žvaigždutes taip,
+    // kad vienoje eilutėje nebūtų daugiau nei 50 “*”;
+
+    for (let i = 1; i < 401; i++) {
+      document.write("*");
+      if (i % 50 === 0) document.write(`<br/>`);
+    }
+
+    // 2. Naudokite funkcija rand(). Sugeneruokite atsitiktinį skaičių
+    // nuo 1 iki 6 ir jį atspausdinkite atitinkame h tage.
+    // Pvz skaičius 3- rezultatas: <h3>3</h3>
+
+    let h = rand(1, 6);
+    document.write(`<h${h}>Tekstas</h${h}>`);
+
+    // 3. Naudokite funkcija rand(). Atspausdinkite 3 skaičius
+    // nuo -10 iki 10. Skaičiai mažesni už 0 turi būti žali,
+    // 0 - raudonas, didesni už 0 mėlyni.
+  </script>
+</html>

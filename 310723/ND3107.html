@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timer10Mins</title>
+    <style>
+      .container {
+        width: 300px;
+        height: 150px;
+        border: 1px solid #dadce0;
+        margin: 50px 50px;
+        border-radius: 5px;
+      }
+      .timer {
+        font-family: arial,sans-serif;
+        font-size: 18px;
+        margin: 18px;
+        display:flex;
+        justify-content: center;
+      }
+      .count {
+        margin: 0;
+        padding-left: 30px;
+        font-size: 30px;
+      }
+      .buttons {
+        padding-top: 20px;
+        justify-content: center;
+        height: 20px;
+        display: flex;
+        gap: 10px;
+      }
+      .buttonsActive {
+        background-color:#4285f4;
+        border: none;
+        border-radius: 3px;
+        font-size: 12px;
+        color: white;
+        width: 130px;
+      }
+      .buttonsPassive {
+        background-color:white;
+        border: 1px solid #dadce0;
+        border-radius: 3px;
+        font-size: 12px;
+        width: 130px;      
+      }
+
+    </style>
+  </head>
+  <body>
+<div class="container">
+  <div class="timer">
+    TIMER</div>
+<div id="counting" class="count">10 min 00 s</div>
+<div class="buttons">
+  <button id="startCounting" onclick="startTimer()" class="buttonsActive">START</button>
+  <button class="buttonsPassive" onclick="resetTimer()">RESET</button>
+</div>
+</div>
+</div>
+
+    <script>
+      const timerElement = document.querySelector("#counting")
+      let second = 600;
+      let interval;
+      let isTimerOn = false;
+      let isFirstTime = true;
+      // const interval = setInterval(() => {
+      // console.log(second);
+      // second--;
+      // timerElement.innerText = `${Math.floor(second/60)} min ${second - (Math.floor(second/60) * 60)} s`
+      // if(second === -1){
+    //   // clearInterval(interval)}
+    // }, 1000);
+
+    function startTimer() {
+      isTimerOn = !isTimerOn;
+      const buttonStart = document.querySelector("#startCounting");
+      buttonStart.innerText = isTimerOn ? `STOP` : `START`;
+      buttonStart.classList.remove(isTimerOn ? `buttonsActive` : `buttonsPassive`);
+      buttonStart.classList.add(isTimerOn ? `buttonsPassive` : `buttonsActive`);
+      if(isFirstTime){
+      interval = setInterval(() => {
+      console.log(second);
+      if(isTimerOn){
+      second--;
+      timerElement.innerText = `${Math.floor(second/60)} min ${second - (Math.floor(second/60) * 60)} s`
+    }
+      if(second === -1){
+      clearInterval(interval)}
+    }, 1000);
+    isFirstTime = false;
+  }
+    }
+function resetTimer(){
+  clearInterval(interval)
+  second = 600;
+  timerElement.innerText = `10 min 00 s`
+}
+    
+    </script>
+  </body>
+</html>
+

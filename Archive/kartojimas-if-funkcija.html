@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Kartojimas</h2>
+    <!-- pirma uzduotis -->
+    <div>
+      <button onclick="trumpesnisVardas('ala', 'Petras')">
+        Trumpesnis vardas
+      </button>
+      <div id="result1"></div>
+    </div>
+    <!--antra uzduotis  -->
+    <hr />
+    <div>
+      <input id="antraUzd" type="text" />
+      <button onclick="checkA()">Control</button>
+      <div id="result2"></div>
+    </div>
+    <!--trecia uzduotis  -->
+    <hr />
+    <div>
+      <input id="treciaUzd" type="text" />
+      <button onclick="checkLetter()">Control2</button>
+      <div id="result3"></div>
+    </div>
+    <!--ketvirta uzduotis  -->
+    <hr />
+    <button onclick="generateAlphabet('z')">Sugeneruoti abecele</button>
+    <div id="result4"></div>
+
+    <!--penkta uzduotis  -->
+    <hr />
+    <p>Pirma krastine:</p>
+    <input id="krastineVienas" type="number" /> cm
+    <p>Antra krastine:</p>
+    <input id="krastineDu" type="number" /> cm
+    <br />
+    <br />
+    <button onclick="plotas()">Staciakampio plotas:</button>
+    <div id="result5"></div>
+
+    <!-- sesta uzduotis -->
+    <hr />
+    <p>Pirma krastine</p>
+    <input id="trikampioKrastineVienas" type="number" /> cm
+    <p>Antra krastine</p>
+    <input id="trikampioKrastineDu" type="number" /> cm
+    <br />
+    <br />
+    <button onclick="izambine()">Izambines ilgis:</button>
+    <br />
+    <div id="result6"></div>
+
+    <!-- septinta uzduotis -->
+    <hr />
+    <button onclick="abeceleDidz()">Abecele su didziosiomis</button>
+    <br />
+    <br />
+    <div id="abeceleDidz"></div>
+
+    <!-- astunta uzduotis -->
+    <hr />
+    <p>Irasykite teksta:</p>
+    <input id="tekstasVertimui" type="text" />
+    <br />
+    <br />
+    <button onclick="tekstasMorzes()">Sugeneruoti morzes koda</button>
+    <p>Morzes kodas:</p>
+    <div id="result8"></div>
+
+    <script>
+      // Pirma uzduotis
+      function trumpesnisVardas(x, y) {
+        if (x.length > y.length)
+          document.querySelector("#result1").innerHTML = `<p>${y}</p>`;
+        else if (x.length === y.length)
+          document.querySelector(
+            "#result1"
+          ).innerHTML = `<p>Zodziai yra vienodi</p`;
+        else
+          document.querySelector(
+            "#result1"
+          ).innerHTML = `<p>Trumpesnis vardas yra: ${x}</p>`;
+      }
+
+      // 2. Sukuriamas htmle inputas ir mygtukas. Kai paspausi mygtuka,
+      // reiksme is inputo turi buti tikrinama, kiek joje yra A
+      // mažųjų bei didžiųjų raidžių Atsakymas išvedamas atskirame dive
+
+      function checkA() {
+        let tekstas = document.querySelector("#antraUzd").value;
+        console.log(tekstas);
+        tekstas = tekstas.toLowerCase();
+        console.log(tekstas);
+        let rez = 0;
+        for (i = 0; i < tekstas.length; i++) {
+          if (tekstas[i] === "a") {
+            rez++;
+          }
+        }
+        document.querySelector(
+          "#result2"
+        ).innerHTML = `<p>Tekste a raidziu yra: ${rez}</p>`;
+      }
+
+      // 3. Sukuriamas dar vienas inputas, kuris stebės ne tik a,
+      // tačiau b c ir d raides. Tai rašoma atskirai
+      // nuo antrosios užduoties
+      function checkLetter() {
+        let tekstas = document.querySelector("#treciaUzd").value;
+        tekstas = tekstas.toLowerCase();
+        console.log(tekstas);
+        let rez = 0;
+        for (let i = 0; i < tekstas.length; i++) {
+          if (
+            tekstas[i] === "a" ||
+            tekstas[i] === "b" ||
+            tekstas[i] === "c" ||
+            tekstas[i] === "d"
+          ) {
+            rez++;
+          }
+        }
+        document.querySelector(
+          "#result3"
+        ).innerHTML = `Is viso a,b,c ir d raidziu yra: ${rez}`;
+      }
+
+      //   4. String.fromCharCode(97)
+      //jisai sugeneruos a raide.
+      // sugeneruoti abecele
+
+      function generateAlphabet(paskutineRaide) {
+        // String.fromCharCode(97);
+        console.log(String.fromCharCode(97));
+        let i = 0;
+        let rez = "";
+        while (true) {
+          let raide = String.fromCharCode(97 + i);
+          rez += raide;
+          if (raide === paskutineRaide) break;
+          i++;
+        }
+        document.querySelector("#result4").innerHTML = rez;
+        return rez;
+      }
+
+      //   5. Duodamos dvi stačiakampio kraštinės. a ir b. reikia
+      //   sukurti funkciją kuri apskačiuotų stačiakampio plotą.
+      //   išvestu i atskira diva rezultata "staciakmpio krastines:
+      //   8cm ir 6cm, jo plotas: 48 cm^2"
+
+      function plotas() {
+        let pirmaKrastine = +document.querySelector("#krastineVienas").value;
+        let antraKrastine = +document.querySelector("#krastineDu").value;
+        let rez = pirmaKrastine * antraKrastine;
+        if (pirmaKrastine === 0 || antraKrastine === 0) {
+          document.querySelector(
+            "#result5"
+          ).innerHTML = `<p>Truksta krastines(-iu) reiksmes</p>`;
+        } else {
+          document.querySelector(
+            "#result5"
+          ).innerHTML = `<p>Staciakampio krastines:
+      ${pirmaKrastine} cm ir ${antraKrastine} cm, jo plotas: ${rez} kv.cm</p>`;
+        }
+      }
+
+      //   6. Turint dvi stataus trikampio kraštines apskaičiuoti jo
+      //   trečiąją kraštinę - įžambinę. Išvest i atskirą divą
+      //   rezultatą: "kraštinė a: 3cm, kraštinė b:4cm, jo įžambinė c: 5cm"
+      //   c=saknis(a*a+b*b)
+
+      function izambine() {
+        let a = document.querySelector("#trikampioKrastineVienas").value;
+        let b = document.querySelector("#trikampioKrastineDu").value;
+        let rez = Math.sqrt(a * a + b * b);
+        document.querySelector(
+          "#result6"
+        ).innerHTML = `Kraštinė a: ${a}, kraštinė b: ${b}, jo įžambinė: ${rez} cm`;
+      }
+      // 7. Reikia atskirame dive išvesti abecelę, tačiau kas antra
+      // jos raidė turi būti didžioji.
+      // "AbCdEfGhIjKlMnOpQrStUvWxYz"
+
+      function abeceleDidz() {
+        let abecele = generateAlphabet("z");
+        console.log(abecele.length);
+        let rez = "";
+        for (let i = 0; i < abecele.length; i++) {
+          if (i % 2 === 0) {
+            rez += abecele[i].toUpperCase();
+          } else {
+            rez += abecele[i];
+          }
+        }
+        document.querySelector("#abeceleDidz").innerHTML = rez;
+        return rez;
+      }
+
+      //       8. Užduotis - Morzės abėcėlė
+      // Reikia parašyti programą, kuri koduotų tekstą Morzės Abėcelės tvarka.
+      // Raidė    Kodas    Raidė    Kodas
+      // A    ·-                     N    -·
+      // B    -···                   O    ---
+      // C    -·-·                  P    ·--·
+      // D    -··                   Q    --·-
+      // E    ·                      R    ·-·
+      // F    ··-·                   S    ···
+      // G    --·                  T    -
+      // H    ····                  U    ··-
+      // I    ··                     V    ···-
+      // J    ·---                 W    ·--
+      // K    -·-                  X    -··-
+      // L    ·-··                  Y    -·--
+      // M    --                 Z    --··
+
+      function tekstasMorzes() {
+        let raides = generateAlphabet("z").toLocaleUpperCase();
+        const raidesArr = [...raides];
+        console.log(raidesArr);
+        const morze = [
+          "·-",
+          "-···",
+          "-·-·",
+          "-··",
+          "·",
+          "··-·",
+          "--·",
+          "····",
+          "··",
+          "·---",
+          "-·-",
+          "·-··",
+          "--",
+          "-·",
+          "---",
+          "·--·",
+          "--·-",
+          "·-·",
+          "···",
+          "-",
+          "··-",
+          "···-",
+          "·--",
+          "-··-",
+          "-·--",
+          "--··",
+        ];
+        console.log(morze);
+        let tekstasVertimui = document.querySelector("#tekstasVertimui").value;
+        tekstasVertimui = tekstasVertimui.toUpperCase();
+        console.log(tekstasVertimui);
+        let rez = "";
+        for (i = 0; i < tekstasVertimui.length; i++) {
+          console.log(tekstasVertimui[i]);
+        }
+      }
+
+      // Parašyk programa kuri invertintu žodi inputas "Sigis" outputas "sigiS"
+    </script>
+  </body>
+</html>

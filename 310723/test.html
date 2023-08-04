@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="time"></p>
+    <button onclick="stopTimer()" id="controlTimer">Stop Timer</button>
+    <button onclick="resetTimer()" id="resetTimer">Reset Timer</button>
+
+    <script>
+      const timerElement = document.getElementById("time");
+      let timerOn = true;
+      let leftTime = 545;
+      let timerInterval;
+
+      function stopTimer() {
+        timerOn = !timerOn;
+        document.getElementById("controlTimer").innerText = timerOn
+          ? "Stop Timer"
+          : "Resume Timer";
+      }
+
+      function startTimer() {
+        timerInterval = setInterval(() => {
+          if (timerOn) {
+            leftTime--;
+            timerElement.innerText = `${Math.floor(leftTime / 60)}:${String(
+              leftTime % 60
+            ).padStart(2, "0")}`;
+          }
+
+          if (leftTime <= 0) clearInterval(timerInterval);
+        }, 1000);
+      }
+      startTimer();
+      function resetTimer() {
+        clearInterval(timerInterval);
+        leftTime = 600;
+        timerElement.innerText = `${Math.floor(leftTime / 60)}:${String(
+          leftTime % 60
+        ).padStart(2, "0")}`;
+        stopTimer();
+        startTimer();
+      }
+    </script>
+  </body>
+</html>
