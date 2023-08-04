@@ -32,10 +32,9 @@
         gap: 20px;
       }
       .timer {
-        font-size: 50px;
+        font-size: 20px;
         display: flex;
         justify-content: center;
-        padding: 10px;
         margin-top: 20px;
         margin-left: 130px;
         background-color: #b6c1c3;
@@ -44,6 +43,17 @@
       }
       .timer div {
         max-width: 150px;
+      }
+      .end {
+        display: flex;
+        justify-content: center;
+      }
+      .display {
+        display: none;
+      }
+      .end img {
+        width: 300px;
+        height: 200px;
       }
     </style>
   </head>
@@ -65,12 +75,15 @@
         </div>
       </div>
       <div class="timer" id="timer">
-        <div>353</div>
+        <div>0 hour 0 min 0 sec</div>
+      </div>
+      <div class="end display">
+        <img src="this-is-fine.jpg" alt="tai-yra-nuotrauka" />
       </div>
       <div class="buttons">
-        <button onclick="">START</button>
+        <button onclick="start()">START</button>
         <button onclick="">STOP</button>
-        <button onclick="">RESET</button>
+        <button onclick="reset()">RESET</button>
       </div>
     </div>
     <script>
@@ -91,6 +104,66 @@
       // keletą commitų, atimsiu balų :)
       // Pabaigus, prisegti github nuorodą prie assignmento ir išsiųsti man iki
       // sekmadienio vakaro. Sėkmės!
+      let hour,
+        min,
+        sec,
+        interval,
+        isTimerOn = false;
+      function start() {
+        clearInterval(interval);
+        document.querySelector(".end").classList.add("display");
+        hour = parseInt(document.querySelector("#hour").value);
+        min = parseInt(document.querySelector("#min").value);
+        sec = parseInt(document.querySelector("#sec").value);
+
+        if (isNaN(hour) || isNaN(min) || isNaN(sec)) {
+          alert("Ivesti duomenys yra neteisingi");
+          return;
+        }
+        if (sec < 0 || sec > 59) {
+          alert("Sekundziu kiekis negalimas");
+          return;
+        }
+        if (min < 0 || min > 59) {
+          alert("Minuciu kiekis negalimas");
+          return;
+        }
+        if (hour < 0 || hour > 12) {
+          alert("Valandu kiekis negalimas");
+          return;
+        }
+        isTimerOn = true;
+        interval = setInterval(() => {
+          if (hour === 0 && min === 0 && sec === 0) {
+            document.querySelector(".display").classList.remove("display");
+            document.querySelector("#timer div").innerHTML = `Laikas bagesi`;
+            isTimerOn = false;
+            clearInterval(interval);
+          } else {
+            sec--;
+            if (sec === -1) {
+              min--;
+              sec = 59;
+            }
+            if (min === -1) {
+              hour--;
+              min = 59;
+            }
+            document.querySelector(
+              "#timer div"
+            ).innerHTML = `${hour} hour ${min} min ${sec} sec`;
+          }
+        }, 1000);
+      }
+      function reset() {
+        isTimerOn = false;
+        document.querySelector(".end").classList.add("display");
+        document.querySelector("#timer div").innerHTML = `0 hour 0 min 0 sec`;
+        document.querySelector("#hour").value = "";
+        document.querySelector("#min").value = "";
+        document.querySelector("#sec").value = "";
+        clearInterval(interval);
+      }
     </script>
   </body>
 </html>

@@ -10,9 +10,9 @@ Laikmatis:
 
 4. JS sukurti funkcija, kuri pades priimti duomenis + javascript turi patikrinti ar įvesti duomenys yra skaičius;
 
-5. JS duomenis priskirti trims skirtingiems kintamiesiems, kurie parodys kiek liko h, min, s (let nes duomenys keisis);
+5. JS duomenis priskirti trims skirtingiems kintamiesiems, 
 
-6. Paleisti laikrodi su setIterval;
+6. Paleisti laikrodi su setIterval + kurie parodo kiek liko h, min, s (let nes duomenys keisis);
 
 +commit
 
