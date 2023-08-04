@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="tekstas" type="text" />
+  </br>
+</br>
+    <button onclick="skaiciuoti()">Skaiciuoti</button>
+    <div id="rezultatas"></div>
+    <script>
+      // sukurti programa kuri skaiciuos kiek yra a raidziu
+
+      function skaiciuoti() {
+        let tekstas = document.querySelector("#tekstas").value;
+        let rezultatas = 0;
+        for (let i = 0; i < tekstas.length; i++) {
+          if (tekstas[i].toLowerCase() === "a") {
+            rezultatas++;
+          }
+        }
+        document.querySelector(
+          "#rezultatas"
+        ).innerHTML = `<p>Is viso a raidziu yra: ${rezultatas}</p>`;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>timer</title>
+    <style>
+      .container {
+        max-width: 500px;
+        margin: 0 auto;
+        border: 1px solid grey;
+        border-radius: 3px;
+        padding: 20px;
+      }
+      h3 {
+        margin: 0;
+        padding-bottom: 20px;
+      }
+      .input {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+      .input div {
+        display: flex;
+        justify-content: space-between;
+      }
+      .buttons {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+      .timer {
+        font-size: 50px;
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        margin-top: 20px;
+        margin-left: 130px;
+        background-color: #b6c1c3;
+        border-radius: 9999px;
+        max-width: 200px;
+      }
+      .timer div {
+        max-width: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h3 style="display: flex; justify-content: center">Timer</h3>
+      <div class="input">
+        <div>
+          <label for="hour">Enter hours:</label>
+          <input id="hour" type="text" />
+        </div>
+        <div>
+          <label for="min">Enter minutes:</label>
+          <input id="min" type="text" />
+        </div>
+        <div>
+          <label for="sec">Enter seconds:</label>
+          <input id="sec" type="text" />
+        </div>
+      </div>
+      <div class="timer" id="timer">
+        <div>353</div>
+      </div>
+      <div class="buttons">
+        <button onclick="">START</button>
+        <button onclick="">STOP</button>
+        <button onclick="">RESET</button>
+      </div>
+    </div>
+    <script>
+      // Sukurti timer'į, kuris skaičiuotų atgal laiką ir pasibaigus laikui,
+      // vaizdžiai informuotų apie pasibaigusį laiką.
+
+      // Programai reikalingas laukelis, kuriame įvedame laiką minutėmis
+      // (javascript turi patikrinti ar įvesti duomenys yra skaičius),
+      // kitu atveju informuoti, kad neteisingai įvestas laikas.
+
+      // Programa turi atvaizduoti likusį laiką, kuris keičiasi kas sekundę.
+      // Turi būti mygtukas, kuris leistų pradėti laiką skaičiuoti iš naujo.
+      // Pasibaigus laikui, programa turi aiškiai informuoti (.alert() netinka),
+      // kad laikas pasibaigė (pavyzdžiui, pakeisti fono spalvą, išmesti gražų
+      // didelį pranešimą, ar kaip jau sugalvosite :))
+
+      // Užduotį reikia talpinti githu'e ir daryti commitus, jeigu matysiu tik
+      // keletą commitų, atimsiu balų :)
+      // Pabaigus, prisegti github nuorodą prie assignmento ir išsiųsti man iki
+      // sekmadienio vakaro. Sėkmės!
+    </script>
+  </body>
+</html>

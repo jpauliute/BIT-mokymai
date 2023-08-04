@@ -1,0 +1,28 @@
+Laikmatis:
+
+1. HTML atvaizduoti timeri;
+
+2. HTML input, kuris priims kiek laiko timeris tikses (valandomis, minutemis, sekundemis);
+
+3. HTML sukurti 3x button kuris reaguos i funkcijas: start, stop, reset;
+
++commit
+
+4. JS sukurti funkcija, kuri pades priimti duomenis + javascript turi patikrinti ar įvesti duomenys yra skaičius;
+
+5. JS duomenis priskirti trims skirtingiems kintamiesiems, kurie parodys kiek liko h, min, s (let nes duomenys keisis);
+
+6. Paleisti laikrodi su setIterval;
+
++commit
+
+7. SetInterval sukursim tikrinima ar laikrodis sustojo (apims kiek laiko liko sukti laikrodi. Jei liko nulis, laikrodis sustojo + pasikeitimas);
+
+8. JS funkcija kuri sustabdys timeri (is timer on? stop, kintamasis kuris nusakys ar timeris veikia)
+
+9. JS funkcija reset, kuris leistų pradėti laiką skaičiuoti iš naujo gali palikt senus duomenis ar leist ivest naujus;
+
++commit
+
+10. HTML kuris atvaizduos, kad timeris pasibaige, iskris paveikslelis.
+ 
