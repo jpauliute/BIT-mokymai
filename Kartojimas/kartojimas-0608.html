@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //  Daugiamačiai masyvai:
+      // Sugeneruokite masyvą iš 10 elementų, kurio elementai būtų masyvai
+      // iš 5 elementų su reikšmėmis nuo 5 iki 25.
+      function rand(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      }
+
+      const m1 = [];
+      const m2 = [];
+      for (let ii = 0; ii < 5; ii++) {
+        m1.push(rand(5, 25));
+      }
+      console.log(m2);
+      console.log(m1);
+
+      // Raskite didžiausio elemento reikšmę;
+
+      // Suskaičiuokite kiekvieno antro lygio masyvų su vienodais indeksais
+      // sumas (t.y. suma reikšmių turinčių indeksą 0, 1 ir t.t.)
+
+      // Visus antro lygio masyvus “pailginkite” iki 7 elementų
+
+      // Sukurkite masyvą iš 10 elementų. Kiekvienas masyvo elementas turi
+      // būti masyvas su atsitiktiniu kiekiu nuo 2 iki 20 elementų.
+
+      // Elementų reikšmės atsitiktinai parinktos raidės iš intervalo A-Z.
+      // Išrūšiuokite antro lygio masyvus pagal abėcėlę (t.y. tuos kur su raidėm).
+
+      // Išrūšiuokite antro uždavinio pirmo lygio masyvą taip, kad
+      // elementai kurių masyvai trumpiausi eitų pradžioje. Masyvai kurie turi bent
+      // vieną “K” raidę, visada būtų didžiojo
+
+      //   nepavyko:
+
+      // Naudodamiesi 1 uždavinio masyvu:
+      //   // Suskaičiuokite kiek masyve yra elementų didesnių už 10;
+      //   let count = 0;
+      //   for (let i = 0; i < 5; i++) if (m1[i] > 10) count++;
+      //   console.log(count++);
+    </script>
+  </body>
+</html>

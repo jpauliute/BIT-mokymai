@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>0807</title>
+  </head>
+  <body>
+    <script>
+      //     sukuriame masyvą iš 20 elementų;
+      // jų reikšmės - atsitiktinės nuo 1 iki 50;
+      // sukurti naują masyvą;
+      // jei pirmojo masyvo reikšmė dalinasi iš 4, pridėti tą reikšmę į naują masyvą;
+      function rand(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      }
+
+      const ar = [];
+      const newAr = [];
+      for (let i = 0; i < 20; i++) {
+        ar.push(rand(1, 50));
+        if (ar[i] % 4 === 0) newAr.push(ar[i]);
+      }
+      console.log(ar);
+      console.log(newAr);
+
+      // Sukurti 2 masyvus kuriuose yra po 30 elementu.
+      // Jų reikšmės: atsitiktinės raidės nuo A iki Z.
+      // Sukruti trečią masyvą, kuriame bus raidės, esančios
+      // ir pirmame masyve ir antrame. Pvz jei pirmame yra raidė
+      // A tačiau antrame masyve jos nėra, į trečiąjį taipogi nededame.
+
+      const ats1 = [];
+      const ats2 = [];
+      const ats3 = [];
+      for (let i = 0; i < 30; i++) {
+        ats1.push(String.fromCharCode(97 + rand(0, 25)));
+        ats2.push(String.fromCharCode(97 + rand(0, 25)));
+      }
+      for (let i = 0; i < 30; i++)
+        if (ats1.includes(ats2[i])) {
+          ats3.push(ats1[i]);
+        }
+
+      console.log(ats1);
+      console.log(ats2);
+      console.log(ats3);
+
+      // sukurti masyva is 100 el su rand 0 iki 25
+      // isfiltruoti reiksmes didesnes uz 10
+
+      const mas = [];
+      for (let i = 0; i < 100; i++) mas.push(rand(0, 25));
+      console.log(mas);
+
+      const masF = mas.filter((value) => value > 10);
+      console.log(masF);
+
+      // isfiltruoti indeksus su lyginiais skaitmenimis
+
+      const masFind = mas.filter((value) => value % 2 === 1);
+      console.log(masFind);
+    </script>
+  </body>
+</html>

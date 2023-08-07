@@ -189,5 +189,74 @@
     // 3. Naudokite funkcija rand(). Atspausdinkite 3 skaičius
     // nuo -10 iki 10. Skaičiai mažesni už 0 turi būti žali,
     // 0 - raudonas, didesni už 0 mėlyni.
+
+    // --------------
+
+    // Sugeneruokite masyvą iš 30 elementų (indeksai nuo 0 iki 29),
+    //   // kurių reikšmės yra atsitiktiniai skaičiai nuo 5 iki 25.
+
+    const ar = [];
+    for (i = 0; i < 30; i++) ar.push(rand(5, 25));
+    console.log(ar);
+
+    // Suskaičiuokite kiek masyve yra reikšmių didesnių už 10;
+    let count = 0;
+    for (let i = 0; i < 30; i++) {
+      if (ar[i] > 10) count++;
+    }
+    console.log(count);
+    // Suskaičiuokite visų porinių (lyginių) indeksų reikšmių sumą;
+
+    let count2 = 0;
+    for (let i = 0; i < 30; i++) if (i % 2 === 0) count2 += ar[i];
+    console.log(count2);
+
+    // Sukurkite naują masyvą, kurio reikšmės yra 1 uždavinio masyvo
+    // reikšmes minus tos reikšmės indeksas;
+
+    const nAr = [];
+    for (let i = 0; i < 30; i++) nAr.push(ar[i] - i);
+    console.log(nAr);
+
+    // Papildykite masyvą papildomais 10 elementų su reikšmėmis
+    // nuo 5 iki 25, kad bendras masyvas padidėtų iki indekso 39;
+
+    for (let i = 0; i < 9; i++) nAr.push(rand(5, 25));
+    console.log(nAr);
+
+    // Iš masyvo elementų sukurkite du naujus masyvus. Vienas turi
+    // būti sudarytas iš neporinių indeksų reikšmių, o kitas iš porinių;
+
+    const n1 = [];
+    const n2 = [];
+    for (let i = 0; i < 30; i++) if (i % 2 === 0) n2.push(ar[i]);
+    console.log(n2);
+    for (let i = 0; i < 30; i++) if (i % 2 !== 0) n1.push(ar[i]);
+    console.log(n1);
+
+    // Pirminio masyvo elementus su poriniais indeksais padarykite
+    // lygius 0 jeigu jie didesni už 15;
+
+    for (let i = 0; i < 30; i++) if (i % 2 === 0 && ar[i] > 15) ar[i] = 0;
+    console.log(ar);
+
+    // nepavyko:
+
+    // Raskite didžiausią masyvo reikšmę ir jos indeksą
+    // arba indeksus jeigu yra keli;
+
+    // Naudodami funkciją splice() iš masyvo ištrinkite
+    // visus elementus kurių reikšmės didesnės už 10;
+
+    // for (const value of ar) if (value > 10) ar.splice(0, 1);
+    // console.log(ar);
+
+    // Naudodami funkciją splice() iš masyvo ištrinkite visus
+    // elementus turinčius porinį indeksą;
+
+    // for (const index of ar) if (index % 2 === 0) ar.splice(0, 1);
+    // console.log(ar);
+
+    //
   </script>
 </html>

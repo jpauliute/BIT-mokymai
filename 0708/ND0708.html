@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coctails</title>
+    <style>
+      img {
+        max-width: 350px;
+        border-radius: 5px;
+      }
+      h1 {
+        margin: 0;
+        position: relative;
+        top: -80px;
+        left: 20px;
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        text-align: center;
+        max-width: 280px;
+        color: #221e34;
+        background-color: #eae5d9;
+        border-radius: 20px;
+        padding: 8px;
+        font-size: 23px;
+        align-items: center;
+      }
+      .card {
+        justify-content: center;
+      }
+      #data {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin: 20px;
+      }
+      button:hover {
+        font-weight: 900;
+      }
+      button {
+        border: none;
+        border-radius: 10px;
+        width: 50px;
+        height: 25px;
+        background-color: #221e34;
+        color: #eae5d9;
+      }
+      #clicked {
+        background-color: white;
+        width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="data"></div>
+    <div id="clicked"></div>
+    <script>
+      let gerimai;
+      fetch(
+        "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita"
+      )
+        .then((resp) => resp.json())
+        .then((data) => {
+          gerimai = data.drinks;
+          for (const gerimas of data.drinks) {
+            document.querySelector(
+              "#data"
+            ).innerHTML += `<div class="card"><img src="${gerimas.strDrinkThumb}"><h1>${gerimas.strDrink}<button onclick="moreInfo(${gerimas.idDrink})">info</button></h1></div>`;
+          }
+          console.log(data);
+        });
+
+      function moreInfo(id) {
+        const gerimas = gerimai.filter(
+          (value) => parseInt(value.idDrink) === id
+        )[0];
+        document.querySelector(
+          "#clicked"
+        ).innerHTML = `${gerimas.strInstructions}<br/><button onclick="back()">back</button>`;
+        document.querySelector("#data").remove();
+      }
+      function back() {
+        document.querySelector("#clicked").remove();
+        location.reload();
+      }
+    </script>
+  </body>
+</html>

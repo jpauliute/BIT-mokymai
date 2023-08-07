@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kartojimas 0508</title>
+    <style>
+      table {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <h2>Pirma uzduotis</h2>
+    <div id="rez1"></div>
+    <div id="rez2"></div>
+    <div id="rez3"></div>
+    <div id="rez4"></div>
+    <div id="rez5"></div>
+    <div id="rez6"></div>
+    <h2>Antra uzduotis</h2> -->
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>Skaiciai</th>
+            <th>Kiek tokiu paciu</th>
+          </tr>
+        </thead>
+        <tbody id="data"></tbody>
+      </table>
+    </div>
+    <script>
+      // 1. padauginti is 3;
+      // 2. istraukti kvadratine sakni.
+      // 3. suapvalinti i mazaja puse
+      // 4. padalinti ta pati kintamaji is jo paties saknies
+      // 5. atskirti jo sveikaja dali, is jos istraukti sakni,
+      //   suapvalinti. o nesveikaja dali padauginti is 100 ir
+      //   prideti prie viso to
+      // 6. suapvalinti
+      // atsakymą atsiųsti man :)
+      let x = 5;
+      x = x * 3;
+      x = Math.sqrt(x);
+      x = Math.floor(x);
+      x = x / Math.sqrt(x);
+      x = Math.round(Math.sqrt(Math.floor(x))) + (x - Math.floor(x)) * 100;
+      x = Math.round(x);
+      console.log(x);
+
+      //   let rez1 = x * 3;
+      //   document.querySelector("#rez1").innerHTML = `<p>${rez1}</p>`;
+      //   let rez2 = Math.sqrt(x);
+      //   document.querySelector("#rez2").innerHTML = `<p>${rez2}</p>`;
+      //   let rez3 = Math.floor(rez2);
+      //   document.querySelector("#rez3").innerHTML = `<p>${rez3}</p>`;
+      //   let rez4 = x / Math.sqrt(x);
+      //   document.querySelector("#rez4").innerHTML = `<p>${rez4}</p>`;
+      //   let rez5 = Math.round(rez4);
+      //   rez5 = Math.sqrt(rez5);
+      //   let rez5nesv = rez5 - 1;
+      //   rez5 = Math.round(rez5);
+      //   rez5nesv = rez5nesv * 100;
+      //   rez5f = rez5 + rez5nesv;
+      //   console.log(rez5);
+      //   console.log(rez5nesv);
+      //   console.log(rez5f);
+      //   document.querySelector("#rez5").innerHTML = `<p>${rez5f}</p>`;
+      //   let rez6 = Math.round(rez5f);
+      //   document.querySelector("#rez6").innerHTML = `<p>${rez6}</p>`;
+
+      const rand = (min, max) =>
+        Math.floor(Math.random() * (max - min + 1)) + min;
+
+      // Sukurti masyvą iš 100 elementų su random
+      // reikšmėmis nuo 0 iki 20. Suskaičiuoti kiek
+      // kokių skaičių yra. Visą šią statistiką atvaizduoti
+      // lentelėje.
+
+      // const length = 100;
+      // const defaultValue = 0;
+      // // Create an array of length 100 and fill it with 0
+      // const myArray = Array(length).fill(defaultValue);
+      // console.log(myArray);
+
+      const skaiciai = [];
+      for (let i = 0; i < 100; i++) skaiciai.push(rand(0, 20));
+      const pasikartojantysSkaiciai = Array(21).fill(0);
+      for (let i = 0; i < skaiciai.length; i++) {
+        pasikartojantysSkaiciai[skaiciai[i]]++;
+      }
+      console.log(skaiciai);
+      console.log(pasikartojantysSkaiciai);
+      const data = document.querySelector("#data");
+      for (let i = 0; i < pasikartojantysSkaiciai.length; i++) {
+        data.innerHTML += `<tr><td>${i}</td><td>${pasikartojantysSkaiciai[i]}</td></tr>`;
+      }
+    </script>
+  </body>
+</html>

@@ -73,6 +73,13 @@
     <p>Morzes kodas:</p>
     <div id="result8"></div>
 
+    <!-- devinta uzduotis -->
+    <hr />
+    <p>Irasykite teksta:</p>
+    <input id="tekstas9" type="text" />
+    <button onclick="generuoti9()">Generuoti</button>
+    <div id="result9"></div>
+
     <script>
       // Pirma uzduotis
       function trumpesnisVardas(x, y) {
@@ -223,7 +230,7 @@
       function tekstasMorzes() {
         let raides = generateAlphabet("z").toLocaleUpperCase();
         const raidesArr = [...raides];
-        console.log(raidesArr);
+        raidesArr.push(" ");
         const morze = [
           "·-",
           "-···",
@@ -251,18 +258,31 @@
           "-··-",
           "-·--",
           "--··",
+          "&nbsp&nbsp&nbsp",
         ];
         console.log(morze);
         let tekstasVertimui = document.querySelector("#tekstasVertimui").value;
         tekstasVertimui = tekstasVertimui.toUpperCase();
         console.log(tekstasVertimui);
         let rez = "";
-        for (i = 0; i < tekstasVertimui.length; i++) {
-          console.log(tekstasVertimui[i]);
+        for (let i = 0; i < tekstasVertimui.length; i++) {
+          rez += `&nbsp${
+            morze[raidesArr.findIndex((el) => el === tekstasVertimui[i])]
+          }&nbsp`;
         }
+        document.querySelector("#result8").innerHTML = rez;
       }
 
       // Parašyk programa kuri invertintu žodi inputas "Sigis" outputas "sigiS"
+
+      function generuoti9() {
+        const input = document.querySelector("#tekstas9");
+        let tekstas = input.value;
+        tekstas = tekstas.toLowerCase();
+        console.log(tekstas);
+        tekstas += tekstas[tekstas.length - 1].toUpperCase();
+        document.querySelector("#result9").innerHTML = `<p>${tekstas}</p>`;
+      }
     </script>
   </body>
 </html>
