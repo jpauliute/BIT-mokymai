@@ -56,20 +56,22 @@
     <div id="data"></div>
     <div id="clicked"></div>
     <script>
+      const atvaizduotiDuomenis = (data) => {
+        gerimai = data.drinks;
+        for (const gerimas of data.drinks) {
+          document.querySelector(
+            "#data"
+          ).innerHTML += `<div class="card"><img src="${gerimas.strDrinkThumb}"><h1>${gerimas.strDrink}<button onclick="moreInfo(${gerimas.idDrink})">info</button></h1></div>`;
+        }
+        console.log(data);
+      };
+
       let gerimai;
       fetch(
         "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita"
       )
         .then((resp) => resp.json())
-        .then((data) => {
-          gerimai = data.drinks;
-          for (const gerimas of data.drinks) {
-            document.querySelector(
-              "#data"
-            ).innerHTML += `<div class="card"><img src="${gerimas.strDrinkThumb}"><h1>${gerimas.strDrink}<button onclick="moreInfo(${gerimas.idDrink})">info</button></h1></div>`;
-          }
-          console.log(data);
-        });
+        .then(atvaizduotiDuomenis);
 
       function moreInfo(id) {
         const gerimas = gerimai.filter(
@@ -78,11 +80,11 @@
         document.querySelector(
           "#clicked"
         ).innerHTML = `${gerimas.strInstructions}<br/><button onclick="back()">back</button>`;
-        document.querySelector("#data").remove();
+        document.querySelector("#data").innerHTML = "";
       }
       function back() {
-        document.querySelector("#clicked").remove();
-        location.reload();
+        document.querySelector("#clicked").innerHTML = "";
+        atvaizduotiDuomenis({ drinks: gerimai });
       }
     </script>
   </body>

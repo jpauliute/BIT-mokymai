@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ND-8-9</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .pagination {
+            justify-content:center;
+        }
+    </style>
+</head>
+  </head>
+  <body>
+    <div id="result" class="container"></div>
+    <nav class="container">
+        <ul class="pagination">
+          <li class="page-item"><a class="page-link" href="#" onclick="previous(event)">Previous</a></li>
+          <li class="page-item"><a class="page-link" href="#" onclick="next(event)">Next</a></li>
+        </ul>
+      </nav>
+    <script>
+
+// Step 1: Susikurkite OMDb api raktą (https://www.omdbapi.com/).
+// Step 2: Paimkite marvel filmų ir serialų sąrašą pagal suformuotą API nuorodą: 
+// https://www.omdbapi.com/?apikey=[API_KEY]&s=marvel
+// Step 3: Atvaizduokite 10 gautų filmų puslapyje.
+let page = 1;
+         function getData() {
+            fetch('https://www.omdbapi.com/?apikey=6554d0f6&s=marvel&page='+page)
+            .then(resp => resp.json())
+            .then(resp => {
+                console.log(resp);
+                const result = document.getElementById('result');
+
+                let html = `<div class="row">`;
+                resp.Search.map(data => {
+                    html += `<div class="col-4">
+                                <a href="#">
+                                    <img src="${data.Poster}" alt="${data.Title}" />
+                                    <h3>${data.Title}</h3>
+                                </a>
+                            </div>`;
+                });
+
+                html += `</div>`;
+
+                result.innerHTML = html;
+            });
+        }
+
+        getData();
+
+// Step 4: Sukurkite puslapiavimo funkcionalumą pasinaudojant mygtukais "Previous" ir "Next".
+// Atidarius tinklapį, pagal nutylėjimą (default), atvaizduojamas pirmasis puslapis. 
+// Paspaudus ant mygtuko sekantis vartotojas yra nukreipiamas į antrajį puslapį ir t.t.
+// Jeigu vartotojas yra pirmame puslapyje, mygtukas "Previous" turi turėti priskirtą atributą "disabled" ir nukreipimas yra stabdomas.
+// Tą patį atlikite su mygtuku "Next" jei varotojas yra paskutiniame puslapyje.
+// Patikrinkite puslapiavimo veikimą su kitomis trijomis paieškos frazėmis.
+
+function next (e) {
+    e.preventDefault();
+    e.target.disabled = false;
+    page++;
+    if((page === 30 || page > 30)){
+        e.target.disabled=true;
+        page = 30;
+    }
+    getData();
+    console.log(page);
+}
+function previous (e){
+    e.preventDefault();
+    page--;
+    if((page < 1 || page === 1)){
+    e.target.disabled = true;
+page = 1;}
+    getData();
+    console.log(page);
+}
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Funkcijos</title>
+  </head>
+  <body>
+    <script>
+      let hello = "Labas Pasauli";
+      // aprasant funkcija nurodomi parametrai
+      function multiply(a, b, c) {
+        if (!a || !b || !c) return false;
+        console.log(a * b);
+        return (a * b) / c;
+      }
+      console.log(multiply(5, 3, 2));
+
+      function showSomething(text) {
+        document.write(text);
+      }
+      showSomething(hello);
+
+      //   funkcijos issaukimas (Function call), perduodant argumentus
+      let number = multiply(11, 11, 15);
+      console.log("Is funkcijos grazinta reiksme:", number);
+
+      //   arrow funkcija
+
+      let divide = (a, b) => {
+        return a / b;
+      };
+
+      console.log("A dalinta is B lygu:", divide(10, 2));
+
+      let sum = (a, b) => a + b;
+
+      console.log("A ir B suma:", sum(555, 111));
+
+      let addEleven = (a) => a + 11;
+
+      console.log("Prie A pridejus 11:", addEleven(599));
+
+      //   Standartines parametru reiksmes pagal nutylejima
+
+      function generateText(name = "Jonas", lastname = "Petraitis") {
+        return name + " " + lastname;
+      }
+      console.log(generateText("Brad", "Pit"));
+
+      //   Savaime issisaukianti funkcija - self invoking function
+      (function init() {
+        document.write(`<h2>Funkcija issisaukia savaime `);
+      })();
+
+      //   Scopes
+      // Globalus kintamasis
+      let helloGlobal = "Hello World";
+
+      (function sayHello() {
+        document.write(helloGlobal);
+      })();
+
+      //   Block Scope - tai kas yra tarp riestiniu skliaustu
+
+      const consText = "Nekintantis tekstas";
+
+      let letText = "Kintantis tekstas";
+
+      if (true) {
+        let block = "Sugeneruotas kintamasis";
+        // var variable = 'Var Kintamojo reiksme'
+      }
+      // console.log(variable);
+    </script>
+  </body>
+</html>
