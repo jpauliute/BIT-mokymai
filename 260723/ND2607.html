@@ -4,37 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <style>
+      #rez {
+        max-width: 800px;
+        display: flex;
+      }
+      img {
+        width: 300px;
+        height: 100px;
+      }
+      .tekst {
+        margin: 15px;
+        display: block;
+        text-align: justify;
+      }
+    
+    </style>
   </head>
   <body>
-    <div id="1"><p></p></div>
-    <div id="2"><p></p></div>
-    <div id="3"><p></p></div>
-    <div id="4"><p></p></div>
-    <div id="5"><p></p></div>
-    <div id="6"><p></p></div>
-    <div id="7"><p></p></div>
-    <div id="8"><p></p></div>
-    <div id="9"><p></p></div>
-    <div id="10"><p></p></div>
-    <div id="12"><p></p></div>
-    <div id="13"><p></p></div>
-    <div id="14"><p></p></div>
-    <div id="15"><p></p></div>
-    <div id="16"><p></p></div>
-    <div id="17"><p></p></div>
-    <div id="18"><p></p></div>
-    <div id="19"><p></p></div>
-    <div id="20"><p></p></div>
-    <div id="21"><p></p></div>
-    <div id="22"><p></p></div>
-    <div id="23"><p></p></div>
-    <div id="24"><p></p></div>
-    <div id="25"><p></p></div>
-    <div id="26"><p></p></div>
-    <div id="27"><p></p></div>
-    <div id="28"><p></p></div>
-    <div id="29"><p></p></div>
-    <div id="30"><p></p></div>
+    <div id="rez"></div>
+    </div>
     <script>
       const products = [
         {
@@ -427,6 +422,21 @@
         },
       ];
       console.log(products);
+for(const product of products){
+  document.querySelector("#rez").innerHTML += `<img src="${product.thumbnail}" alt="" />
+    <div class="tekst">
+       <h3>${product.title}</h3>
+       <p>
+         ${product.description}
+       </p>
+   </div>
+   <div>
+      <h5>$${product.price}</h5>
+     <button>Add to cart</button>
+   </div>`
+}
+    
+
     </script>
   </body>
 </html>

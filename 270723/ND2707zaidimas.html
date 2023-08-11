@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      max-width: 100%;
+      display: flex;
+      gap: 50px;
+      margin: 30px;
+    }
+    .box {
+      width: 400px;
+      height: 400px;
+      background-color: tomato;
+      position: relative;
+    }
+    .box button {
+      width: 50px;
+      height: 50px;
+      background-color: aliceblue;
+      border: none;
+      position: absolute;
+      border-radius: 20px;
+    }
+    #rezPc {
+      font-size: 30px;
+      font-weight: 500;
+    }
+    #rezAcc {
+      font-size: 30px;
+      font-weight: 500;
+    }
+    #laikmatis {
+      font-size: 30px;
+      font-weight: 500;
+    }
+  </style>
+  <body>
+    <div>
+      <h4>Kompiuterio taskai:</h4>
+      <div id="rezPc">0</div>
+      <h4>Zaidejo taskai:</h4>
+      <div id="rezAcc">0</div>
+      <h4>Laikas:</h4>
+      <div class="laikmatis">
+        <div id="laikmatis"></div>
+      </div>
+    </div>
+    <div class="box" id="box">
+      <button id="eventBtn1"></button>
+    </div>
+    <div class="rezultatai">
+      <h4>Laimejo kompiuteris:</h4>
+      <div id="roundPc">0</div>
+      <h4>Laimejo zaidejas:</h4>
+      <div id="roundAcc">0</div>
+    </div>
+    <script>
+      //   rezultatu skaiciavimas Acc
+      let rezAcc = 0;
+      let buttonAcc = document.querySelector("#eventBtn1");
+      let rezDisplayAcc = document.getElementById("rezAcc");
+      buttonAcc.addEventListener("click", function () {
+        event.stopPropagation();
+        rezAcc++;
+        rezDisplayAcc.innerHTML = rezAcc;
+      });
+      // rezultatu skaiciavimas PC
+      let rezPc = 0;
+      let buttonPc = document.querySelector("#box");
+      let rezDisplayPc = document.getElementById("rezPc");
+      buttonPc.addEventListener("click", function () {
+        rezPc++;
+        rezDisplayPc.innerHTML = rezPc;
+      });
+      //   funkcija kuri privers mygtuka judeti
+      function rand(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      }
+
+      function move() {
+        let interval = setInterval(function () {
+          let left = rand(0, 350);
+          let top = rand(0, 350);
+          buttonAcc.style.top = top + "px";
+          buttonAcc.style.left = left + "px";
+        }, 10);
+      }
+      move();
+      function round() {
+        let startas = 10;
+        document.querySelector("#laikmatis").innerHTML = startas;
+        let interval = setInterval(function () {
+          startas--;
+          document.querySelector("#laikmatis").innerHTML = startas;
+          if (startas === 0) {
+            clearInterval(interval);
+            roundCount();
+          }
+        }, 1000);
+      }
+      let roundas = 0;
+      let roundCounterPc = 0;
+      let roundCounterAcc = 0;
+      function roundCount() {
+        roundas++;
+        console.log(`roundas pasibaige ${rezPc} ${rezAcc}`);
+        let roundElementPc = document.querySelector("#roundPc");
+        let roundElementAcc = document.querySelector("#roundAcc");
+
+        if (rezPc >= rezAcc) {
+          roundCounterPc++;
+          roundElementPc.innerHTML = roundCounterPc;
+        }
+        if (rezAcc >= rezPc) {
+          roundCounterAcc++;
+          roundElementAcc.innerHTML = roundCounterAcc;
+        }
+        rezAcc = 0;
+        rezDisplayAcc.innerHTML = 0;
+        rezPc = 0;
+        rezDisplayPc.innerHTML = 0;
+        if (roundas < 2) round();
+        else document.querySelector("body").innerHTML = "fsio";
+      }
+      round();
+    </script>
+  </body>
+</html>
+<!-- kai bus 10 roundu, zaidimas baigaisi, viskas sustoja -->
