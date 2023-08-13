@@ -1,0 +1,66 @@
+FUNKCIJOS (MODE)
+ function game(first, second, pointsLimit) {
+---funkcijoje naudojami kintamieji first, second, pointsLimit----
+ return result;
+        }
+---atvaizduojama su pasirinktais kintamaisiais----
+document.write(game('Jonas', 'Martynas', 222));
+
+RAND funkcijos naudojimas:
+function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+MASYVAI (ARRAY)
+      let array = [0, "Tekstas", false, undefined, null];
+      console.log(array);
+
+Parodo visas array reiksmes:
+for (let i = 0; i < array.length; i++) {
+console.log(array[i]);}
+
+ARBA: For value of
+for (let value of array) {
+console.log(value);}
+
+ARBA: For index in
+for (let index in array) {
+console.log(array[index]);}
+     
+Pirmasis būdas pridėti reikšmę į masyvą
+        newArray[0] = 'Hello World';
+        newArray[newArray.length] = 255;
+        newArray[newArray.length] = 355;
+        newArray[newArray.length] = 455;
+        console.log(newArray);
+REZ:
+0:"Hello world"
+1: 255
+2: 255
+3: 355
+4: 455
+
+PUSH:
+anothearArray.push("Goodbye world", 144, 344, false);
+      console.log(anotherArray);
+
+UNSHIFT ideda i pirmaja (nuline) pozicija:
+anotherArray.unshift("Lauke lyja");
+      console.log(anotherArray);
+
+UNSHIFT, elemento idejimas i prieki, nepakeiciant pirmosios reiksmes:
+const unshiftedArray = [];
+const wantedValue = "Elementas kurį noriu pridėti į priekį";
+unshiftedArray[unshiftedArray.length] = wantedValue;
+
+for (const value of anotherArray) {
+unshiftedArray[unshiftedArray.length] = value;
+} console.log(unshiftedArray);
+
+Ištrynimas iš masyvo (neneaudojame delete unshiftedArray[0])
+unshiftedArray.splice(0, 3, 'Lauke sninga', 'Hello World', 145); - 0 parodo nuo kurios pozicijos trint, 1 parodo kiek elementu, kiti elementai rodo i ka pakeisti istrintus
+
+
+
