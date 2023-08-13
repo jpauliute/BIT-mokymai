@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coctails4</title>
+    <style>
+      .card {
+        display: flex;
+      }
+      img {
+        width: 100px;
+        margin: 20px;
+      }
+      h5 {
+        align-self: center;
+      }
+      h5:hover {
+        color: tomato;
+        cursor: pointer;
+        font-weight: 800;
+      }
+      .info {
+        background-color: grey;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cards"></div>
+    <div id="info"></div>
+    <script>
+      const dataDispl = (data) => {
+        drinks = data.drinks;
+        for (const drink of data.drinks)
+          document.querySelector(
+            "#cards"
+          ).innerHTML += `<div class="card"><img src="${drink.strDrinkThumb}"><h5 onclick ="info(${drink.idDrink})">${drink.strDrink}</h5></div>`;
+        console.log(data);
+      };
+      fetch(
+        "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita"
+      )
+        .then((resp) => resp.json())
+        .then(dataDispl);
+
+      function info(id) {
+        const drink = drinks.filter(
+          (value) => parseInt(value.idDrink) === id
+        )[0];
+        document.querySelector(
+          "#info"
+        ).innerHTML = `<p>${drink.strInstructions}</p><h5 onclick="back()">back</h5>`;
+        document.querySelector("#cards").innerHTML = "";
+      }
+      function back() {
+        document.querySelector("#info").innerHTML = "";
+        dataDispl({ drinks: drinks });
+      }
+    </script>
+  </body>
+</html>

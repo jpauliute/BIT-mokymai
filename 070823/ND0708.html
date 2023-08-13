@@ -66,12 +66,12 @@
         console.log(data);
       };
 
-      let gerimai;
       fetch(
         "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita"
       )
         .then((resp) => resp.json())
         .then(atvaizduotiDuomenis);
+      console.log(atvaizduotiDuomenis);
 
       function moreInfo(id) {
         const gerimas = gerimai.filter(
