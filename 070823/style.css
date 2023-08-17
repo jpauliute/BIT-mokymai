@@ -1,0 +1,44 @@
+img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+.container {
+  max-width: 1000px;
+}
+.info {
+  position: fixed;
+  background-color: rgb(96, 96, 96);
+  top: 3%;
+  margin-left: 80px;
+  margin-bottom: 100px;
+  width: 800px;
+
+  visibility: hidden;
+  border-radius: 10px;
+}
+.bi-x-circle-fill {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+p {
+  font-size: 18px;
+  font-weight: 100;
+}
+#back {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+}
+.ruta a,
+p,
+h4,
+ul {
+  color: aliceblue;
+}
+.result h3 {
+  color: black;
+}

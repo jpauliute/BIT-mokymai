@@ -1,0 +1,13 @@
+section {
+  background: grey;
+}
+section h3 {
+  color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+section p {
+  text-align: justify;
+  padding-bottom: 30px;
+  margin: 0;
+}

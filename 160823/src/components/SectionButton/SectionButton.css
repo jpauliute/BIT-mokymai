@@ -1,0 +1,9 @@
+.sectionButt {
+  background: black;
+  margin: 0;
+  color: white;
+}
+.sectionButt h5 {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
