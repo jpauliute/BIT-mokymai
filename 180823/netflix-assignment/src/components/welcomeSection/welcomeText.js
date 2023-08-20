@@ -6,7 +6,7 @@ function WelcomeText() {
           Unlimited movies, TV shows, and more
         </h2>
 
-        <p>Watch anywhere. Cancel anytime.</p>
+        <p className="text-lg">Watch anywhere. Cancel anytime.</p>
 
         <p>
           Ready to watch? Enter your email to create or restart your membership.
@@ -19,7 +19,9 @@ function WelcomeText() {
             placeholder="Email address"
           />
 
-          <button className="w-1/3 bg-red-500">Get Started {">"} </button>
+          <button className="w-1/3 bg-red-500 hover:bg-red-800">
+            Get Started {">"}{" "}
+          </button>
         </div>
       </div>
     </div>

@@ -6,7 +6,6 @@ import SecondSection from "./components/secondSection/secondSection";
 import ThirdSection from "./components/thirdSection/thirdSection";
 import FourthSection from "./components/fourthSection/fourthSection";
 import FifthSection from "./components/fifthSection/fifthSection";
-import SixthSection from "./components/sixthSection/sixthSection";
 import Questions from "./components/questions/questions";
 import Footer from "./components/footer/footer";
 
@@ -18,7 +17,6 @@ root.render(
     <ThirdSection />
     <FourthSection />
     <FifthSection />
-    <SixthSection />
     <Questions />
     <Footer />
   </React.StrictMode>
