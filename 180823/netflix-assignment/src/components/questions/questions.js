@@ -1,4 +1,5 @@
 import Question from "./question";
+import InputGroup from "../InputGroup";
 
 function Questions() {
   return (
@@ -20,6 +21,9 @@ function Questions() {
       <Question text="Is Netflix good for kids?" />
 
       <Question text="Why am I seeing this language?" />
+      <div className="w-1/2">
+        <InputGroup />
+      </div>
     </div>
   );
 }
