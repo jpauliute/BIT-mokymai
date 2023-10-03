@@ -1,0 +1,11 @@
+{
+    "name": "jovitos/pc-2023-10-03",
+    "require": {
+        "league/climate": "^3.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jovitos\\Pc20231003\\": "src/"
+        }
+    }
+}
